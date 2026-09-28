@@ -1,8 +1,10 @@
 # CyberURLs
 
+**Live:** https://cyberbyteir.github.io/CyberURLs/
+
 Single-file, offline-capable link dashboard for OSINT and cyber investigation resources.
 
-**169 resources across 11 categories.** Open [`Cyber_Bookmarks.html`](Cyber_Bookmarks.html) in any browser — no build step, no server, no dependencies to install.
+**169 resources across 11 categories.** Open [`index.html`](index.html) in any browser — no build step, no server, no dependencies to install.
 
 ## Features
 
