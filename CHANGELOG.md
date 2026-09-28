@@ -2,6 +2,22 @@
 
 All notable changes to CyberURLs are documented here.
 
+## v2.1.0 — 2026-09-28
+
+### Added
+
+- Text filter now matches category and subcategory headers, not just link names. Searching a category header (e.g. `legal process`) reveals that whole panel; searching a subcategory header (e.g. `block explorers`) reveals that whole group.
+- Panels with no remaining matches hide themselves during a search so the column layout stays packed.
+
+### Changed
+
+- Category order is now Network & Infra, Malware & Threat Intel, Ransomware, Cryptocurrency, OSINT & People, LE Databases, Legal Process, Mobile & Device, Forensic Tools, Training & Certs, Reference & Misc, Indiana. Filter pills follow the same order.
+- Layout switched from CSS grid to CSS multi-column with `break-inside: avoid`, so panels stack and pack vertically instead of every panel in a row being padded to the height of the tallest one. Measured at 1900px: 5 columns of 1169–1364px, total page height 1366px.
+
+### Fixed
+
+- `.link-list` max-height returned to 2000px (from 6000px). The tallest list is 1125px, so the oversized value made most of the 0.25s collapse transition produce no visible movement.
+
 ## v2.0.1 — 2026-09-28
 
 ### Added

@@ -8,9 +8,10 @@ Single-file, offline-capable link dashboard for OSINT and cyber investigation re
 
 ## Features
 
-- Live text filter across every link (name, category, host)
+- Live text filter across every link (name, category, host) and across category and subcategory headers — matching a header reveals that whole panel or group
 - Category pill filters and collapsible panels
-- Named subcategory groups inside each panel; empty groups hide themselves while filtering
+- Named subcategory groups inside each panel; empty groups and empty panels hide themselves while filtering
+- Multi-column layout that packs panels vertically, so a tall category leaves no gap beside the short ones
 - Per-link host labels
 - Keyboard-friendly, dark UI
 
@@ -18,18 +19,18 @@ Single-file, offline-capable link dashboard for OSINT and cyber investigation re
 
 | Category | Count | Subcategories |
 |---|---|---|
-| Legal Process | 8 | Provider Legal Process Portals · Templates & Reference |
-| LE Databases | 12 | Commercial Data Aggregators · Criminal Justice Systems · Federal & Fusion Portals |
-| OSINT & People | 10 | People & Identity · Social Media · Vehicles · Tool Collections |
-| Cryptocurrency | 10 | Investigation Platforms · Block Explorers · Attribution & Abuse Reporting · Reference |
 | Network & Infra | 34 | IP Lookup & Geolocation · IP Reputation, Proxy & Tor · Domain, URL & Site Analysis · Email Header Analysis · Attack Surface & Recon · Wireless & Hardware IDs · Peer-to-Peer & Tracking |
 | Malware & Threat Intel | 17 | Threat Intelligence Platforms · File & Sample Analysis · Sample & Hash Repositories · Breach & Credential Data |
 | Ransomware | 8 | Leak Site Trackers · Identification & Decryption · Group Intelligence |
-| Forensic Tools | 21 | Vendor Portals & Downloads · Open-Source Forensic Tools · Encoding, Regex & Data Utilities · Passwords & Hash Cracking |
+| Cryptocurrency | 10 | Investigation Platforms · Block Explorers · Attribution & Abuse Reporting · Reference |
+| OSINT & People | 10 | People & Identity · Social Media · Vehicles · Tool Collections |
+| LE Databases | 12 | Commercial Data Aggregators · Criminal Justice Systems · Federal & Fusion Portals |
+| Legal Process | 8 | Provider Legal Process Portals · Templates & Reference |
 | Mobile & Device | 14 | Tool Support & Compatibility · Device Identification · Phone Numbers & Carriers · CDR & Tower Analysis · Community & Technique |
+| Forensic Tools | 21 | Vendor Portals & Downloads · Open-Source Forensic Tools · Encoding, Regex & Data Utilities · Passwords & Hash Cracking |
 | Training & Certs | 21 | Forensics & IR Training · Law Enforcement Academies · CompTIA & Vendor Certification · Networking Fundamentals |
-| Indiana | 13 | Courts & Case Records · Corrections & Warrants · Vehicles & Geography · State Agency Forms & Programs |
 | Reference & Misc | 2 | General |
+| Indiana | 13 | Courts & Case Records · Corrections & Warrants · Vehicles & Geography · State Agency Forms & Programs |
 
 ## Link status
 

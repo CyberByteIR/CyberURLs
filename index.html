@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="version" content="2.0.1">
+<meta name="version" content="2.1.0">
 <title>OSINT & Cyber Investigation Resources</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Barlow:wght@300;400;500;600;700&display=swap');
@@ -156,22 +156,28 @@
   }
 
   /* === GRID LAYOUT === */
+  /* Multi-column flow so panels stack vertically and pack without
+     the row-height gaps a CSS grid leaves around tall panels. */
   .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 1px;
+    column-width: 320px;
+    column-gap: 1px;
     background: var(--border);
     padding: 0;
+    align-content: start;
   }
 
   /* === CATEGORY PANEL === */
   .cat-panel {
     background: var(--panel);
-    display: flex;
-    flex-direction: column;
-    min-height: 0;
+    display: block;
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    margin-bottom: 1px;
     transition: background .15s;
   }
+
+  .cat-panel.empty { display: none; }
 
   .cat-header {
     display: flex;
@@ -227,7 +233,7 @@
   .link-list {
     overflow: hidden;
     transition: max-height .25s ease;
-    max-height: 6000px;
+    max-height: 2000px;
   }
 
   .cat-panel.collapsed .link-list { max-height: 0; }
@@ -309,31 +315,31 @@
   }
 
   /* === CATEGORY COLORS === */
-  .cat-legal  .cat-icon { color: #4db8ff; }
-  .cat-db     .cat-icon { color: #7fb3ff; }
-  .cat-osint  .cat-icon { color: #a78bfa; }
-  .cat-crypto .cat-icon { color: #f5a623; }
   .cat-net    .cat-icon { color: #3dd68c; }
   .cat-mal    .cat-icon { color: #e05252; }
   .cat-ransom .cat-icon { color: #ff6b6b; }
-  .cat-sw     .cat-icon { color: #60c8f0; }
+  .cat-crypto .cat-icon { color: #f5a623; }
+  .cat-osint  .cat-icon { color: #a78bfa; }
+  .cat-db     .cat-icon { color: #7fb3ff; }
+  .cat-legal  .cat-icon { color: #4db8ff; }
   .cat-cell   .cat-icon { color: #a8e063; }
+  .cat-sw     .cat-icon { color: #60c8f0; }
   .cat-train  .cat-icon { color: #ffd166; }
-  .cat-in     .cat-icon { color: #ff9d5c; }
   .cat-misc   .cat-icon { color: #9ca3af; }
+  .cat-in     .cat-icon { color: #ff9d5c; }
 
-  .cat-legal  .cat-label { color: #4db8ff; }
-  .cat-db     .cat-label { color: #7fb3ff; }
-  .cat-osint  .cat-label { color: #a78bfa; }
-  .cat-crypto .cat-label { color: #f5a623; }
   .cat-net    .cat-label { color: #3dd68c; }
   .cat-mal    .cat-label { color: #e05252; }
   .cat-ransom .cat-label { color: #ff6b6b; }
-  .cat-sw     .cat-label { color: #60c8f0; }
+  .cat-crypto .cat-label { color: #f5a623; }
+  .cat-osint  .cat-label { color: #a78bfa; }
+  .cat-db     .cat-label { color: #7fb3ff; }
+  .cat-legal  .cat-label { color: #4db8ff; }
   .cat-cell   .cat-label { color: #a8e063; }
+  .cat-sw     .cat-label { color: #60c8f0; }
   .cat-train  .cat-label { color: #ffd166; }
-  .cat-in     .cat-label { color: #ff9d5c; }
   .cat-misc   .cat-label { color: #9ca3af; }
+  .cat-in     .cat-label { color: #ff9d5c; }
 
   /* === STATUS BAR === */
   footer {
@@ -377,123 +383,22 @@
   </div>
   <div class="filter-pills" id="filter-pills">
     <button class="pill active" data-cat="all">ALL</button>
-    <button class="pill" data-cat="cat-legal">LEGAL</button>
-    <button class="pill" data-cat="cat-db">DATABASES</button>
-    <button class="pill" data-cat="cat-osint">OSINT</button>
-    <button class="pill" data-cat="cat-crypto">CRYPTO</button>
     <button class="pill" data-cat="cat-net">NETWORK</button>
     <button class="pill" data-cat="cat-mal">MALWARE</button>
     <button class="pill" data-cat="cat-ransom">RANSOM</button>
-    <button class="pill" data-cat="cat-sw">TOOLS</button>
+    <button class="pill" data-cat="cat-crypto">CRYPTO</button>
+    <button class="pill" data-cat="cat-osint">OSINT</button>
+    <button class="pill" data-cat="cat-db">DATABASES</button>
+    <button class="pill" data-cat="cat-legal">LEGAL</button>
     <button class="pill" data-cat="cat-cell">MOBILE</button>
+    <button class="pill" data-cat="cat-sw">TOOLS</button>
     <button class="pill" data-cat="cat-train">TRAINING</button>
-    <button class="pill" data-cat="cat-in">INDIANA</button>
     <button class="pill" data-cat="cat-misc">MISC</button>
+    <button class="pill" data-cat="cat-in">INDIANA</button>
   </div>
 </div>
 
 <div class="grid" id="grid">
-
-  <!-- LEGAL PROCESS -->
-  <div class="cat-panel cat-legal" data-cat="cat-legal">
-    <div class="cat-header" onclick="togglePanel(this)">
-      <div class="cat-icon">⚖</div>
-      <div class="cat-label">Legal Process</div>
-      <div class="cat-count">8</div>
-      <div class="collapse-btn">&#9662;</div>
-    </div>
-    <div class="link-list">
-      <div class="sub-label">Provider Legal Process Portals</div>
-      <div class="link-item"><a href="https://leportal.microsoft.com/home" target="_blank" rel="noopener"><span class="link-dot"></span>Microsoft LE Portal<span class="link-host">leportal.microsoft.com</span></a></div>
-      <div class="link-item"><a href="https://www.facebook.com/records/login/" target="_blank" rel="noopener"><span class="link-dot"></span>Meta / Facebook LE Portal<span class="link-host">facebook.com</span></a></div>
-      <div class="link-item"><a href="https://lers.google.com" target="_blank" rel="noopener"><span class="link-dot"></span>Google LERS<span class="link-host">lers.google.com</span></a></div>
-      <div class="link-item"><a href="https://lep.apple.com/#/" target="_blank" rel="noopener"><span class="link-dot"></span>Apple Law Enforcement Portal<span class="link-host">lep.apple.com</span></a></div>
-      <div class="link-item"><a href="https://squareup.request.csdisco.com/us/form" target="_blank" rel="noopener"><span class="link-dot"></span>Square / Block / Cash App LE<span class="link-host">squareup.request.csdisco.com</span></a></div>
-      <div class="link-item"><a href="https://app.kodexglobal.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Kodex<span class="link-host">app.kodexglobal.com</span></a></div>
-      <div class="sub-label">Templates &amp; Reference</div>
-      <div class="link-item"><a href="https://www.search.org/resources/isp-list/" target="_blank" rel="noopener"><span class="link-dot"></span>SEARCH ISP List<span class="link-host">search.org</span></a></div>
-      <div class="link-item"><a href="https://warrantportal.kingcounty.gov/justtemplates" target="_blank" rel="noopener"><span class="link-dot"></span>KCPAO Search Warrant Templates<span class="link-host">warrantportal.kingcounty.gov</span></a></div>
-    </div>
-  </div>
-
-  <!-- LE DATABASES -->
-  <div class="cat-panel cat-db" data-cat="cat-db">
-    <div class="cat-header" onclick="togglePanel(this)">
-      <div class="cat-icon">🗄</div>
-      <div class="cat-label">LE Databases</div>
-      <div class="cat-count">12</div>
-      <div class="collapse-btn">&#9662;</div>
-    </div>
-    <div class="link-list">
-      <div class="sub-label">Commercial Data Aggregators</div>
-      <div class="link-item"><a href="https://clear.thomsonreuters.com" target="_blank" rel="noopener"><span class="link-dot"></span>CLEAR (Thomson Reuters)<span class="link-host">clear.thomsonreuters.com</span></a></div>
-      <div class="link-item"><a href="https://secure.accurint.com/app/bps/main" target="_blank" rel="noopener"><span class="link-dot"></span>Accurint (LexisNexis)<span class="link-host">secure.accurint.com</span></a></div>
-      <div class="link-item"><a href="https://search.flocksafety.com/search" target="_blank" rel="noopener"><span class="link-dot"></span>Flock Safety Search<span class="link-host">search.flocksafety.com</span></a></div>
-      <div class="sub-label">Criminal Justice Systems</div>
-      <div class="link-item"><a href="https://www.justicexchange.com/jxp/" target="_blank" rel="noopener"><span class="link-dot"></span>NPlex (JusticeXchange)<span class="link-host">justicexchange.com</span></a></div>
-      <div class="link-item"><a href="https://www.vinelink.com/vinelink/initSearchForm.do?siteId=15000" target="_blank" rel="noopener"><span class="link-dot"></span>VINELink<span class="link-host">vinelink.com</span></a></div>
-      <div class="link-item"><a href="https://www.swbtrac.com/" target="_blank" rel="noopener"><span class="link-dot"></span>SWB TRAC<span class="link-host">swbtrac.com</span></a></div>
-      <div class="link-item"><a href="https://www.icaccops.com/users/" target="_blank" rel="noopener"><span class="link-dot"></span>ICAC COPS<span class="link-host">icaccops.com</span></a></div>
-      <div class="link-item"><a href="https://www.cjis.gov/" target="_blank" rel="noopener"><span class="link-dot"></span>LEEP / CJIS<span class="link-host">cjis.gov</span></a></div>
-      <div class="sub-label">Federal &amp; Fusion Portals</div>
-      <div class="link-item"><a href="https://hsin.dhs.gov/dhs/cymc/Pages/default.aspx" target="_blank" rel="noopener"><span class="link-dot"></span>DHS HSIN – CYMC<span class="link-host">hsin.dhs.gov</span></a></div>
-      <div class="link-item"><a href="https://hsin.dhs.gov/collab/CIN/Pages/default.aspx" target="_blank" rel="noopener"><span class="link-dot"></span>DHS HSIN – CIN<span class="link-host">hsin.dhs.gov</span></a></div>
-      <div class="link-item"><a href="https://infragard.fbi.gov/" target="_blank" rel="noopener"><span class="link-dot"></span>InfraGard<span class="link-host">infragard.fbi.gov</span></a></div>
-      <div class="link-item"><a href="https://lesp.ncmec.org/share/dashboard" target="_blank" rel="noopener"><span class="link-dot"></span>NCMEC Share<span class="link-host">lesp.ncmec.org</span></a></div>
-    </div>
-  </div>
-
-  <!-- OSINT & PEOPLE -->
-  <div class="cat-panel cat-osint" data-cat="cat-osint">
-    <div class="cat-header" onclick="togglePanel(this)">
-      <div class="cat-icon">🔍</div>
-      <div class="cat-label">OSINT &amp; People</div>
-      <div class="cat-count">10</div>
-      <div class="collapse-btn">&#9662;</div>
-    </div>
-    <div class="link-list">
-      <div class="sub-label">People &amp; Identity</div>
-      <div class="link-item"><a href="https://facecheck.id/" target="_blank" rel="noopener"><span class="link-dot"></span>FaceCheck (Reverse Face Search)<span class="link-host">facecheck.id</span></a></div>
-      <div class="link-item"><a href="https://www.familytreenow.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Family Tree Now<span class="link-host">familytreenow.com</span></a></div>
-      <div class="link-item"><a href="https://npd.pentester.com/" target="_blank" rel="noopener"><span class="link-dot"></span>NPD Breach Check<span class="link-host">npd.pentester.com</span></a></div>
-      <div class="link-item"><a href="https://namechk.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Namechk (Username Search)<span class="link-host">namechk.com</span></a></div>
-      <div class="sub-label">Social Media</div>
-      <div class="link-item"><a href="https://sowdust.github.io/fb-search/" target="_blank" rel="noopener"><span class="link-dot"></span>Facebook Search (SowDust)<span class="link-host">sowdust.github.io</span></a></div>
-      <div class="link-item"><a href="https://followerwonk.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Followerwonk (X / Twitter Analytics)<span class="link-host">followerwonk.com</span></a></div>
-      <div class="sub-label">Vehicles</div>
-      <div class="link-item"><a href="https://vincario.com/" target="_blank" rel="noopener"><span class="link-dot"></span>VIN Decoder (Vincario)<span class="link-host">vincario.com</span></a></div>
-      <div class="link-item"><a href="https://vincheck.info/free-license-plate-lookup" target="_blank" rel="noopener"><span class="link-dot"></span>VINCheck Plate Search<span class="link-host">vincheck.info</span></a></div>
-      <div class="sub-label">Tool Collections</div>
-      <div class="link-item"><a href="https://tools.osintnewsletter.com/" target="_blank" rel="noopener"><span class="link-dot"></span>OSINT Tools Library<span class="link-host">tools.osintnewsletter.com</span></a></div>
-      <div class="link-item"><a href="https://inteltechniques.com/tools/" target="_blank" rel="noopener"><span class="link-dot"></span>IntelTechniques Tools (Bazzell)<span class="link-host">inteltechniques.com</span></a></div>
-    </div>
-  </div>
-
-  <!-- CRYPTOCURRENCY -->
-  <div class="cat-panel cat-crypto" data-cat="cat-crypto">
-    <div class="cat-header" onclick="togglePanel(this)">
-      <div class="cat-icon">₿</div>
-      <div class="cat-label">Cryptocurrency</div>
-      <div class="cat-count">10</div>
-      <div class="collapse-btn">&#9662;</div>
-    </div>
-    <div class="link-list">
-      <div class="sub-label">Investigation Platforms</div>
-      <div class="link-item"><a href="https://reactor.chainalysis.com/graphs/list" target="_blank" rel="noopener"><span class="link-dot"></span>Chainalysis Reactor<span class="link-host">reactor.chainalysis.com</span></a></div>
-      <div class="link-item"><a href="https://field.chainalysis.com/search" target="_blank" rel="noopener"><span class="link-dot"></span>Chainalysis Field<span class="link-host">field.chainalysis.com</span></a></div>
-      <div class="link-item"><a href="https://app.deconflict.com/dashboard" target="_blank" rel="noopener"><span class="link-dot"></span>Deconflict<span class="link-host">app.deconflict.com</span></a></div>
-      <div class="sub-label">Block Explorers</div>
-      <div class="link-item"><a href="https://blockchair.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Blockchair (Multi-Chain)<span class="link-host">blockchair.com</span></a></div>
-      <div class="link-item"><a href="https://mempool.space/" target="_blank" rel="noopener"><span class="link-dot"></span>Mempool (BTC Explorer)<span class="link-host">mempool.space</span></a></div>
-      <div class="link-item"><a href="https://etherscan.io/" target="_blank" rel="noopener"><span class="link-dot"></span>Etherscan (ETH Explorer)<span class="link-host">etherscan.io</span></a></div>
-      <div class="link-item"><a href="https://mainnet.observer/" target="_blank" rel="noopener"><span class="link-dot"></span>mainnet.observer<span class="link-host">mainnet.observer</span></a></div>
-      <div class="sub-label">Attribution &amp; Abuse Reporting</div>
-      <div class="link-item"><a href="https://chainabuse.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Chain Abuse<span class="link-host">chainabuse.com</span></a></div>
-      <div class="link-item"><a href="https://www.bitcoinwhoswho.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Bitcoin Who&#x27;s Who<span class="link-host">bitcoinwhoswho.com</span></a></div>
-      <div class="sub-label">Reference</div>
-      <div class="link-item"><a href="https://support.chainalysis.com/hc/en-us/articles/360059668211-Chainalysis-entity-categories" target="_blank" rel="noopener"><span class="link-dot"></span>Chainalysis Entity Categories<span class="link-host">support.chainalysis.com</span></a></div>
-    </div>
-  </div>
 
   <!-- NETWORK & INFRA -->
   <div class="cat-panel cat-net" data-cat="cat-net">
@@ -604,6 +509,138 @@
     </div>
   </div>
 
+  <!-- CRYPTOCURRENCY -->
+  <div class="cat-panel cat-crypto" data-cat="cat-crypto">
+    <div class="cat-header" onclick="togglePanel(this)">
+      <div class="cat-icon">₿</div>
+      <div class="cat-label">Cryptocurrency</div>
+      <div class="cat-count">10</div>
+      <div class="collapse-btn">&#9662;</div>
+    </div>
+    <div class="link-list">
+      <div class="sub-label">Investigation Platforms</div>
+      <div class="link-item"><a href="https://reactor.chainalysis.com/graphs/list" target="_blank" rel="noopener"><span class="link-dot"></span>Chainalysis Reactor<span class="link-host">reactor.chainalysis.com</span></a></div>
+      <div class="link-item"><a href="https://field.chainalysis.com/search" target="_blank" rel="noopener"><span class="link-dot"></span>Chainalysis Field<span class="link-host">field.chainalysis.com</span></a></div>
+      <div class="link-item"><a href="https://app.deconflict.com/dashboard" target="_blank" rel="noopener"><span class="link-dot"></span>Deconflict<span class="link-host">app.deconflict.com</span></a></div>
+      <div class="sub-label">Block Explorers</div>
+      <div class="link-item"><a href="https://blockchair.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Blockchair (Multi-Chain)<span class="link-host">blockchair.com</span></a></div>
+      <div class="link-item"><a href="https://mempool.space/" target="_blank" rel="noopener"><span class="link-dot"></span>Mempool (BTC Explorer)<span class="link-host">mempool.space</span></a></div>
+      <div class="link-item"><a href="https://etherscan.io/" target="_blank" rel="noopener"><span class="link-dot"></span>Etherscan (ETH Explorer)<span class="link-host">etherscan.io</span></a></div>
+      <div class="link-item"><a href="https://mainnet.observer/" target="_blank" rel="noopener"><span class="link-dot"></span>mainnet.observer<span class="link-host">mainnet.observer</span></a></div>
+      <div class="sub-label">Attribution &amp; Abuse Reporting</div>
+      <div class="link-item"><a href="https://chainabuse.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Chain Abuse<span class="link-host">chainabuse.com</span></a></div>
+      <div class="link-item"><a href="https://www.bitcoinwhoswho.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Bitcoin Who&#x27;s Who<span class="link-host">bitcoinwhoswho.com</span></a></div>
+      <div class="sub-label">Reference</div>
+      <div class="link-item"><a href="https://support.chainalysis.com/hc/en-us/articles/360059668211-Chainalysis-entity-categories" target="_blank" rel="noopener"><span class="link-dot"></span>Chainalysis Entity Categories<span class="link-host">support.chainalysis.com</span></a></div>
+    </div>
+  </div>
+
+  <!-- OSINT & PEOPLE -->
+  <div class="cat-panel cat-osint" data-cat="cat-osint">
+    <div class="cat-header" onclick="togglePanel(this)">
+      <div class="cat-icon">🔍</div>
+      <div class="cat-label">OSINT &amp; People</div>
+      <div class="cat-count">10</div>
+      <div class="collapse-btn">&#9662;</div>
+    </div>
+    <div class="link-list">
+      <div class="sub-label">People &amp; Identity</div>
+      <div class="link-item"><a href="https://facecheck.id/" target="_blank" rel="noopener"><span class="link-dot"></span>FaceCheck (Reverse Face Search)<span class="link-host">facecheck.id</span></a></div>
+      <div class="link-item"><a href="https://www.familytreenow.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Family Tree Now<span class="link-host">familytreenow.com</span></a></div>
+      <div class="link-item"><a href="https://npd.pentester.com/" target="_blank" rel="noopener"><span class="link-dot"></span>NPD Breach Check<span class="link-host">npd.pentester.com</span></a></div>
+      <div class="link-item"><a href="https://namechk.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Namechk (Username Search)<span class="link-host">namechk.com</span></a></div>
+      <div class="sub-label">Social Media</div>
+      <div class="link-item"><a href="https://sowdust.github.io/fb-search/" target="_blank" rel="noopener"><span class="link-dot"></span>Facebook Search (SowDust)<span class="link-host">sowdust.github.io</span></a></div>
+      <div class="link-item"><a href="https://followerwonk.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Followerwonk (X / Twitter Analytics)<span class="link-host">followerwonk.com</span></a></div>
+      <div class="sub-label">Vehicles</div>
+      <div class="link-item"><a href="https://vincario.com/" target="_blank" rel="noopener"><span class="link-dot"></span>VIN Decoder (Vincario)<span class="link-host">vincario.com</span></a></div>
+      <div class="link-item"><a href="https://vincheck.info/free-license-plate-lookup" target="_blank" rel="noopener"><span class="link-dot"></span>VINCheck Plate Search<span class="link-host">vincheck.info</span></a></div>
+      <div class="sub-label">Tool Collections</div>
+      <div class="link-item"><a href="https://tools.osintnewsletter.com/" target="_blank" rel="noopener"><span class="link-dot"></span>OSINT Tools Library<span class="link-host">tools.osintnewsletter.com</span></a></div>
+      <div class="link-item"><a href="https://inteltechniques.com/tools/" target="_blank" rel="noopener"><span class="link-dot"></span>IntelTechniques Tools (Bazzell)<span class="link-host">inteltechniques.com</span></a></div>
+    </div>
+  </div>
+
+  <!-- LE DATABASES -->
+  <div class="cat-panel cat-db" data-cat="cat-db">
+    <div class="cat-header" onclick="togglePanel(this)">
+      <div class="cat-icon">🗄</div>
+      <div class="cat-label">LE Databases</div>
+      <div class="cat-count">12</div>
+      <div class="collapse-btn">&#9662;</div>
+    </div>
+    <div class="link-list">
+      <div class="sub-label">Commercial Data Aggregators</div>
+      <div class="link-item"><a href="https://clear.thomsonreuters.com" target="_blank" rel="noopener"><span class="link-dot"></span>CLEAR (Thomson Reuters)<span class="link-host">clear.thomsonreuters.com</span></a></div>
+      <div class="link-item"><a href="https://secure.accurint.com/app/bps/main" target="_blank" rel="noopener"><span class="link-dot"></span>Accurint (LexisNexis)<span class="link-host">secure.accurint.com</span></a></div>
+      <div class="link-item"><a href="https://search.flocksafety.com/search" target="_blank" rel="noopener"><span class="link-dot"></span>Flock Safety Search<span class="link-host">search.flocksafety.com</span></a></div>
+      <div class="sub-label">Criminal Justice Systems</div>
+      <div class="link-item"><a href="https://www.justicexchange.com/jxp/" target="_blank" rel="noopener"><span class="link-dot"></span>NPlex (JusticeXchange)<span class="link-host">justicexchange.com</span></a></div>
+      <div class="link-item"><a href="https://www.vinelink.com/vinelink/initSearchForm.do?siteId=15000" target="_blank" rel="noopener"><span class="link-dot"></span>VINELink<span class="link-host">vinelink.com</span></a></div>
+      <div class="link-item"><a href="https://www.swbtrac.com/" target="_blank" rel="noopener"><span class="link-dot"></span>SWB TRAC<span class="link-host">swbtrac.com</span></a></div>
+      <div class="link-item"><a href="https://www.icaccops.com/users/" target="_blank" rel="noopener"><span class="link-dot"></span>ICAC COPS<span class="link-host">icaccops.com</span></a></div>
+      <div class="link-item"><a href="https://www.cjis.gov/" target="_blank" rel="noopener"><span class="link-dot"></span>LEEP / CJIS<span class="link-host">cjis.gov</span></a></div>
+      <div class="sub-label">Federal &amp; Fusion Portals</div>
+      <div class="link-item"><a href="https://hsin.dhs.gov/dhs/cymc/Pages/default.aspx" target="_blank" rel="noopener"><span class="link-dot"></span>DHS HSIN – CYMC<span class="link-host">hsin.dhs.gov</span></a></div>
+      <div class="link-item"><a href="https://hsin.dhs.gov/collab/CIN/Pages/default.aspx" target="_blank" rel="noopener"><span class="link-dot"></span>DHS HSIN – CIN<span class="link-host">hsin.dhs.gov</span></a></div>
+      <div class="link-item"><a href="https://infragard.fbi.gov/" target="_blank" rel="noopener"><span class="link-dot"></span>InfraGard<span class="link-host">infragard.fbi.gov</span></a></div>
+      <div class="link-item"><a href="https://lesp.ncmec.org/share/dashboard" target="_blank" rel="noopener"><span class="link-dot"></span>NCMEC Share<span class="link-host">lesp.ncmec.org</span></a></div>
+    </div>
+  </div>
+
+  <!-- LEGAL PROCESS -->
+  <div class="cat-panel cat-legal" data-cat="cat-legal">
+    <div class="cat-header" onclick="togglePanel(this)">
+      <div class="cat-icon">⚖</div>
+      <div class="cat-label">Legal Process</div>
+      <div class="cat-count">8</div>
+      <div class="collapse-btn">&#9662;</div>
+    </div>
+    <div class="link-list">
+      <div class="sub-label">Provider Legal Process Portals</div>
+      <div class="link-item"><a href="https://leportal.microsoft.com/home" target="_blank" rel="noopener"><span class="link-dot"></span>Microsoft LE Portal<span class="link-host">leportal.microsoft.com</span></a></div>
+      <div class="link-item"><a href="https://www.facebook.com/records/login/" target="_blank" rel="noopener"><span class="link-dot"></span>Meta / Facebook LE Portal<span class="link-host">facebook.com</span></a></div>
+      <div class="link-item"><a href="https://lers.google.com" target="_blank" rel="noopener"><span class="link-dot"></span>Google LERS<span class="link-host">lers.google.com</span></a></div>
+      <div class="link-item"><a href="https://lep.apple.com/#/" target="_blank" rel="noopener"><span class="link-dot"></span>Apple Law Enforcement Portal<span class="link-host">lep.apple.com</span></a></div>
+      <div class="link-item"><a href="https://squareup.request.csdisco.com/us/form" target="_blank" rel="noopener"><span class="link-dot"></span>Square / Block / Cash App LE<span class="link-host">squareup.request.csdisco.com</span></a></div>
+      <div class="link-item"><a href="https://app.kodexglobal.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Kodex<span class="link-host">app.kodexglobal.com</span></a></div>
+      <div class="sub-label">Templates &amp; Reference</div>
+      <div class="link-item"><a href="https://www.search.org/resources/isp-list/" target="_blank" rel="noopener"><span class="link-dot"></span>SEARCH ISP List<span class="link-host">search.org</span></a></div>
+      <div class="link-item"><a href="https://warrantportal.kingcounty.gov/justtemplates" target="_blank" rel="noopener"><span class="link-dot"></span>KCPAO Search Warrant Templates<span class="link-host">warrantportal.kingcounty.gov</span></a></div>
+    </div>
+  </div>
+
+  <!-- MOBILE & DEVICE -->
+  <div class="cat-panel cat-cell" data-cat="cat-cell">
+    <div class="cat-header" onclick="togglePanel(this)">
+      <div class="cat-icon">📱</div>
+      <div class="cat-label">Mobile &amp; Device</div>
+      <div class="cat-count">14</div>
+      <div class="collapse-btn">&#9662;</div>
+    </div>
+    <div class="link-list">
+      <div class="sub-label">Tool Support &amp; Compatibility</div>
+      <div class="link-item"><a href="https://community.cellebrite.com/s/supported-device" target="_blank" rel="noopener"><span class="link-dot"></span>Cellebrite Supported Devices<span class="link-host">community.cellebrite.com</span></a></div>
+      <div class="link-item"><a href="https://www.mobiledit.com/download-list/phone-drivers" target="_blank" rel="noopener"><span class="link-dot"></span>MOBILedit USB Phone Drivers<span class="link-host">mobiledit.com</span></a></div>
+      <div class="link-item"><a href="https://twrp.me/Devices/" target="_blank" rel="noopener"><span class="link-dot"></span>TWRP Devices<span class="link-host">twrp.me</span></a></div>
+      <div class="sub-label">Device Identification</div>
+      <div class="link-item"><a href="https://fccid.io/" target="_blank" rel="noopener"><span class="link-dot"></span>FCC ID Search<span class="link-host">fccid.io</span></a></div>
+      <div class="link-item"><a href="https://www.imei.info/" target="_blank" rel="noopener"><span class="link-dot"></span>IMEI.info<span class="link-host">imei.info</span></a></div>
+      <div class="link-item"><a href="https://www.gsmarena.com/" target="_blank" rel="noopener"><span class="link-dot"></span>GSMArena<span class="link-host">gsmarena.com</span></a></div>
+      <div class="link-item"><a href="https://www.phonescoop.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Phone Scoop<span class="link-host">phonescoop.com</span></a></div>
+      <div class="link-item"><a href="https://phonedb.net/" target="_blank" rel="noopener"><span class="link-dot"></span>PhoneDB (PDAdb.net)<span class="link-host">phonedb.net</span></a></div>
+      <div class="link-item"><a href="https://www.ifixit.com/Teardown" target="_blank" rel="noopener"><span class="link-dot"></span>iFixit Teardowns<span class="link-host">ifixit.com</span></a></div>
+      <div class="sub-label">Phone Numbers &amp; Carriers</div>
+      <div class="link-item"><a href="https://www.numlookup.com/" target="_blank" rel="noopener"><span class="link-dot"></span>NumLookup<span class="link-host">numlookup.com</span></a></div>
+      <div class="link-item"><a href="https://numberingplans.com/" target="_blank" rel="noopener"><span class="link-dot"></span>International Numbering Plans<span class="link-host">numberingplans.com</span></a></div>
+      <div class="sub-label">CDR &amp; Tower Analysis</div>
+      <div class="link-item"><a href="https://trax.lexisnexisrisk.com/" target="_blank" rel="noopener"><span class="link-dot"></span>TraX (LexisNexis / ZetX)<span class="link-host">trax.lexisnexisrisk.com</span></a></div>
+      <div class="sub-label">Community &amp; Technique</div>
+      <div class="link-item"><a href="https://xdaforums.com/t/guide-unlock-forgotten-private-mode-pin.3758011/" target="_blank" rel="noopener"><span class="link-dot"></span>XDA – Unlock Private Mode<span class="link-host">xdaforums.com</span></a></div>
+      <div class="link-item"><a href="https://groups.google.com/forum/?nomobile=true#!forum/mobile-device-forensics-and-analysis/home" target="_blank" rel="noopener"><span class="link-dot"></span>Mobile Device Forensics Group<span class="link-host">groups.google.com</span></a></div>
+    </div>
+  </div>
+
   <!-- FORENSIC TOOLS -->
   <div class="cat-panel cat-sw" data-cat="cat-sw">
     <div class="cat-header" onclick="togglePanel(this)">
@@ -638,37 +675,6 @@
       <div class="link-item"><a href="https://github.com/danielmiessler/SecLists" target="_blank" rel="noopener"><span class="link-dot"></span>SecLists<span class="link-host">github.com</span></a></div>
       <div class="link-item"><a href="https://www.skullsecurity.org/wiki" target="_blank" rel="noopener"><span class="link-dot"></span>SkullSecurity Password Lists<span class="link-host">skullsecurity.org</span></a></div>
       <div class="link-item"><a href="https://www.grc.com/haystack.htm" target="_blank" rel="noopener"><span class="link-dot"></span>GRC Password Haystack<span class="link-host">grc.com</span></a></div>
-    </div>
-  </div>
-
-  <!-- MOBILE & DEVICE -->
-  <div class="cat-panel cat-cell" data-cat="cat-cell">
-    <div class="cat-header" onclick="togglePanel(this)">
-      <div class="cat-icon">📱</div>
-      <div class="cat-label">Mobile &amp; Device</div>
-      <div class="cat-count">14</div>
-      <div class="collapse-btn">&#9662;</div>
-    </div>
-    <div class="link-list">
-      <div class="sub-label">Tool Support &amp; Compatibility</div>
-      <div class="link-item"><a href="https://community.cellebrite.com/s/supported-device" target="_blank" rel="noopener"><span class="link-dot"></span>Cellebrite Supported Devices<span class="link-host">community.cellebrite.com</span></a></div>
-      <div class="link-item"><a href="https://www.mobiledit.com/download-list/phone-drivers" target="_blank" rel="noopener"><span class="link-dot"></span>MOBILedit USB Phone Drivers<span class="link-host">mobiledit.com</span></a></div>
-      <div class="link-item"><a href="https://twrp.me/Devices/" target="_blank" rel="noopener"><span class="link-dot"></span>TWRP Devices<span class="link-host">twrp.me</span></a></div>
-      <div class="sub-label">Device Identification</div>
-      <div class="link-item"><a href="https://fccid.io/" target="_blank" rel="noopener"><span class="link-dot"></span>FCC ID Search<span class="link-host">fccid.io</span></a></div>
-      <div class="link-item"><a href="https://www.imei.info/" target="_blank" rel="noopener"><span class="link-dot"></span>IMEI.info<span class="link-host">imei.info</span></a></div>
-      <div class="link-item"><a href="https://www.gsmarena.com/" target="_blank" rel="noopener"><span class="link-dot"></span>GSMArena<span class="link-host">gsmarena.com</span></a></div>
-      <div class="link-item"><a href="https://www.phonescoop.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Phone Scoop<span class="link-host">phonescoop.com</span></a></div>
-      <div class="link-item"><a href="https://phonedb.net/" target="_blank" rel="noopener"><span class="link-dot"></span>PhoneDB (PDAdb.net)<span class="link-host">phonedb.net</span></a></div>
-      <div class="link-item"><a href="https://www.ifixit.com/Teardown" target="_blank" rel="noopener"><span class="link-dot"></span>iFixit Teardowns<span class="link-host">ifixit.com</span></a></div>
-      <div class="sub-label">Phone Numbers &amp; Carriers</div>
-      <div class="link-item"><a href="https://www.numlookup.com/" target="_blank" rel="noopener"><span class="link-dot"></span>NumLookup<span class="link-host">numlookup.com</span></a></div>
-      <div class="link-item"><a href="https://numberingplans.com/" target="_blank" rel="noopener"><span class="link-dot"></span>International Numbering Plans<span class="link-host">numberingplans.com</span></a></div>
-      <div class="sub-label">CDR &amp; Tower Analysis</div>
-      <div class="link-item"><a href="https://trax.lexisnexisrisk.com/" target="_blank" rel="noopener"><span class="link-dot"></span>TraX (LexisNexis / ZetX)<span class="link-host">trax.lexisnexisrisk.com</span></a></div>
-      <div class="sub-label">Community &amp; Technique</div>
-      <div class="link-item"><a href="https://xdaforums.com/t/guide-unlock-forgotten-private-mode-pin.3758011/" target="_blank" rel="noopener"><span class="link-dot"></span>XDA – Unlock Private Mode<span class="link-host">xdaforums.com</span></a></div>
-      <div class="link-item"><a href="https://groups.google.com/forum/?nomobile=true#!forum/mobile-device-forensics-and-analysis/home" target="_blank" rel="noopener"><span class="link-dot"></span>Mobile Device Forensics Group<span class="link-host">groups.google.com</span></a></div>
     </div>
   </div>
 
@@ -709,6 +715,21 @@
     </div>
   </div>
 
+  <!-- REFERENCE & MISC -->
+  <div class="cat-panel cat-misc" data-cat="cat-misc">
+    <div class="cat-header" onclick="togglePanel(this)">
+      <div class="cat-icon">📎</div>
+      <div class="cat-label">Reference &amp; Misc</div>
+      <div class="cat-count">2</div>
+      <div class="collapse-btn">&#9662;</div>
+    </div>
+    <div class="link-list">
+      <div class="sub-label">General</div>
+      <div class="link-item"><a href="https://www.r-studio.com/finding-raid-parameters.html" target="_blank" rel="noopener"><span class="link-dot"></span>Finding RAID Parameters<span class="link-host">r-studio.com</span></a></div>
+      <div class="link-item"><a href="https://www.stolencamerafinder.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Stolen Camera Finder<span class="link-host">stolencamerafinder.com</span></a></div>
+    </div>
+  </div>
+
   <!-- INDIANA -->
   <div class="cat-panel cat-in" data-cat="cat-in">
     <div class="cat-header" onclick="togglePanel(this)">
@@ -738,21 +759,6 @@
     </div>
   </div>
 
-  <!-- REFERENCE & MISC -->
-  <div class="cat-panel cat-misc" data-cat="cat-misc">
-    <div class="cat-header" onclick="togglePanel(this)">
-      <div class="cat-icon">📎</div>
-      <div class="cat-label">Reference &amp; Misc</div>
-      <div class="cat-count">2</div>
-      <div class="collapse-btn">&#9662;</div>
-    </div>
-    <div class="link-list">
-      <div class="sub-label">General</div>
-      <div class="link-item"><a href="https://www.r-studio.com/finding-raid-parameters.html" target="_blank" rel="noopener"><span class="link-dot"></span>Finding RAID Parameters<span class="link-host">r-studio.com</span></a></div>
-      <div class="link-item"><a href="https://www.stolencamerafinder.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Stolen Camera Finder<span class="link-host">stolencamerafinder.com</span></a></div>
-    </div>
-  </div>
-
 </div><!-- /grid -->
 
 <footer>
@@ -762,7 +768,7 @@
   <span class="sep">|</span>
   <span>12 categories</span>
   <span class="sep">|</span>
-  <span id="version">v2.0.1</span>
+  <span id="version">v2.1.0</span>
   <span class="sep">|</span>
   <span>Updated 2026-09-28</span>
 </footer>
@@ -800,25 +806,35 @@
         return;
       }
 
-      panel.style.display = 'flex';
+      panel.style.display = '';
       let panelHasVisible = false;
 
+      // A query matching the category header shows the whole panel; a query
+      // matching a subcategory header shows that whole group.
+      const panelMatch = !!query &&
+        panel.querySelector('.cat-label').textContent.toLowerCase().includes(query);
+
       let subLabel = null;
+      let subMatch = false;
       let subHasVisible = false;
 
       panel.querySelectorAll('.sub-label, .link-item').forEach(node => {
         if (node.classList.contains('sub-label')) {
           if (subLabel) subLabel.classList.toggle('hidden', !subHasVisible);
           subLabel = node;
+          subMatch = !!query && node.textContent.toLowerCase().includes(query);
           subHasVisible = false;
           return;
         }
         const text = node.textContent.toLowerCase();
-        const show = !query || text.includes(query);
+        const show = !query || panelMatch || subMatch || text.includes(query);
         node.classList.toggle('hidden', !show);
         if (show) { panelHasVisible = true; subHasVisible = true; visible++; }
       });
       if (subLabel) subLabel.classList.toggle('hidden', !subHasVisible);
+
+      // Drop panels with nothing left in them so the columns stay packed
+      panel.classList.toggle('empty', !!query && !panelHasVisible);
 
       // Auto-expand panels with matches when searching
       if (query && panelHasVisible) {
