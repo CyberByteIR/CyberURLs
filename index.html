@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="version" content="2.0.1">
 <title>OSINT & Cyber Investigation Resources</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Barlow:wght@300;400;500;600;700&display=swap');
@@ -226,10 +227,24 @@
   .link-list {
     overflow: hidden;
     transition: max-height .25s ease;
-    max-height: 2000px;
+    max-height: 6000px;
   }
 
   .cat-panel.collapsed .link-list { max-height: 0; }
+
+  .sub-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    background: var(--bg2);
+    padding: 5px 14px 4px;
+    border-bottom: 1px solid var(--border);
+    border-left: 2px solid var(--border-act);
+  }
+
+  .sub-label.hidden { display: none; }
 
   .link-item {
     display: flex;
@@ -294,8 +309,9 @@
   }
 
   /* === CATEGORY COLORS === */
-  .cat-inv    .cat-icon { color: #4db8ff; }
-  .cat-sm     .cat-icon { color: #a78bfa; }
+  .cat-legal  .cat-icon { color: #4db8ff; }
+  .cat-db     .cat-icon { color: #7fb3ff; }
+  .cat-osint  .cat-icon { color: #a78bfa; }
   .cat-crypto .cat-icon { color: #f5a623; }
   .cat-net    .cat-icon { color: #3dd68c; }
   .cat-mal    .cat-icon { color: #e05252; }
@@ -303,11 +319,12 @@
   .cat-sw     .cat-icon { color: #60c8f0; }
   .cat-cell   .cat-icon { color: #a8e063; }
   .cat-train  .cat-icon { color: #ffd166; }
-  .cat-misc   .cat-icon { color: #9ca3af; }
   .cat-in     .cat-icon { color: #ff9d5c; }
+  .cat-misc   .cat-icon { color: #9ca3af; }
 
-  .cat-inv    .cat-label { color: #4db8ff; }
-  .cat-sm     .cat-label { color: #a78bfa; }
+  .cat-legal  .cat-label { color: #4db8ff; }
+  .cat-db     .cat-label { color: #7fb3ff; }
+  .cat-osint  .cat-label { color: #a78bfa; }
   .cat-crypto .cat-label { color: #f5a623; }
   .cat-net    .cat-label { color: #3dd68c; }
   .cat-mal    .cat-label { color: #e05252; }
@@ -315,8 +332,8 @@
   .cat-sw     .cat-label { color: #60c8f0; }
   .cat-cell   .cat-label { color: #a8e063; }
   .cat-train  .cat-label { color: #ffd166; }
-  .cat-misc   .cat-label { color: #9ca3af; }
   .cat-in     .cat-label { color: #ff9d5c; }
+  .cat-misc   .cat-label { color: #9ca3af; }
 
   /* === STATUS BAR === */
   footer {
@@ -360,169 +377,207 @@
   </div>
   <div class="filter-pills" id="filter-pills">
     <button class="pill active" data-cat="all">ALL</button>
-    <button class="pill" data-cat="cat-inv">INVESTIGATIONS</button>
-    <button class="pill" data-cat="cat-sm">SOCIAL</button>
+    <button class="pill" data-cat="cat-legal">LEGAL</button>
+    <button class="pill" data-cat="cat-db">DATABASES</button>
+    <button class="pill" data-cat="cat-osint">OSINT</button>
     <button class="pill" data-cat="cat-crypto">CRYPTO</button>
     <button class="pill" data-cat="cat-net">NETWORK</button>
     <button class="pill" data-cat="cat-mal">MALWARE</button>
     <button class="pill" data-cat="cat-ransom">RANSOM</button>
-    <button class="pill" data-cat="cat-sw">SOFTWARE</button>
-    <button class="pill" data-cat="cat-cell">CELL/MOBILE</button>
+    <button class="pill" data-cat="cat-sw">TOOLS</button>
+    <button class="pill" data-cat="cat-cell">MOBILE</button>
     <button class="pill" data-cat="cat-train">TRAINING</button>
-    <button class="pill" data-cat="cat-misc">MISC</button>
     <button class="pill" data-cat="cat-in">INDIANA</button>
+    <button class="pill" data-cat="cat-misc">MISC</button>
   </div>
 </div>
 
 <div class="grid" id="grid">
 
-  <!-- INVESTIGATIONS -->
-  <div class="cat-panel cat-inv" data-cat="cat-inv">
+  <!-- LEGAL PROCESS -->
+  <div class="cat-panel cat-legal" data-cat="cat-legal">
     <div class="cat-header" onclick="togglePanel(this)">
-      <div class="cat-icon">🔍</div>
-      <div class="cat-label">Investigations</div>
-      <div class="cat-count">34</div>
-      <div class="collapse-btn">▾</div>
+      <div class="cat-icon">⚖</div>
+      <div class="cat-label">Legal Process</div>
+      <div class="cat-count">8</div>
+      <div class="collapse-btn">&#9662;</div>
     </div>
     <div class="link-list">
-      <div class="link-item"><a href="https://clear.thomsonreuters.com" target="_blank" rel="noopener"><span class="link-dot"></span>CLEAR (Thomson Reuters)<span class="link-host">thomsonreuters.com</span></a></div>
-      <div class="link-item"><a href="https://search.flocksafety.com/search" target="_blank" rel="noopener"><span class="link-dot"></span>Flock Search Tool<span class="link-host">flocksafety.com</span></a></div>
-      <div class="link-item"><a href="https://secure.accurint.com/app/bps/main" target="_blank" rel="noopener"><span class="link-dot"></span>Accurint<span class="link-host">accurint.com</span></a></div>
-      <div class="link-item"><a href="https://app.kodexglobal.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Kodex<span class="link-host">kodexglobal.com</span></a></div>
-      <div class="link-item"><a href="https://leportal.microsoft.com/home" target="_blank" rel="noopener"><span class="link-dot"></span>Microsoft LE Portal<span class="link-host">microsoft.com</span></a></div>
-      <div class="link-item"><a href="https://www.facebook.com/records/login/" target="_blank" rel="noopener"><span class="link-dot"></span>Facebook LE Portal<span class="link-host">facebook.com</span></a></div>
+      <div class="sub-label">Provider Legal Process Portals</div>
+      <div class="link-item"><a href="https://leportal.microsoft.com/home" target="_blank" rel="noopener"><span class="link-dot"></span>Microsoft LE Portal<span class="link-host">leportal.microsoft.com</span></a></div>
+      <div class="link-item"><a href="https://www.facebook.com/records/login/" target="_blank" rel="noopener"><span class="link-dot"></span>Meta / Facebook LE Portal<span class="link-host">facebook.com</span></a></div>
       <div class="link-item"><a href="https://lers.google.com" target="_blank" rel="noopener"><span class="link-dot"></span>Google LERS<span class="link-host">lers.google.com</span></a></div>
-      <div class="link-item"><a href="https://squareup.request.csdisco.com/us/form" target="_blank" rel="noopener"><span class="link-dot"></span>Square / Block / CashApp LE<span class="link-host">csdisco.com</span></a></div>
       <div class="link-item"><a href="https://lep.apple.com/#/" target="_blank" rel="noopener"><span class="link-dot"></span>Apple Law Enforcement Portal<span class="link-host">lep.apple.com</span></a></div>
-      <div class="link-item"><a href="https://advantage.mandiant.com/auth/login?returnTo=%2F" target="_blank" rel="noopener"><span class="link-dot"></span>Mandiant Advantage<span class="link-host">mandiant.com</span></a></div>
-      <div class="link-item"><a href="https://cerberus.slcyber.io/" target="_blank" rel="noopener"><span class="link-dot"></span>Cerberus<span class="link-host">slcyber.io</span></a></div>
-      <div class="link-item"><a href="https://app.flashpoint.io/home/dashboard" target="_blank" rel="noopener"><span class="link-dot"></span>Flashpoint<span class="link-host">flashpoint.io</span></a></div>
-      <div class="link-item"><a href="https://app.darkblueintel.com/search/data/?sort=0" target="_blank" rel="noopener"><span class="link-dot"></span>DarkBlue Intel<span class="link-host">darkblueintel.com</span></a></div>
-      <div class="link-item"><a href="https://app.osint.industries/" target="_blank" rel="noopener"><span class="link-dot"></span>OSINT Industries<span class="link-host">osint.industries</span></a></div>
-      <div class="link-item"><a href="https://www.swbtrac.com/" target="_blank" rel="noopener"><span class="link-dot"></span>SWB TRAC<span class="link-host">swbtrac.com</span></a></div>
+      <div class="link-item"><a href="https://squareup.request.csdisco.com/us/form" target="_blank" rel="noopener"><span class="link-dot"></span>Square / Block / Cash App LE<span class="link-host">squareup.request.csdisco.com</span></a></div>
+      <div class="link-item"><a href="https://app.kodexglobal.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Kodex<span class="link-host">app.kodexglobal.com</span></a></div>
+      <div class="sub-label">Templates &amp; Reference</div>
+      <div class="link-item"><a href="https://www.search.org/resources/isp-list/" target="_blank" rel="noopener"><span class="link-dot"></span>SEARCH ISP List<span class="link-host">search.org</span></a></div>
+      <div class="link-item"><a href="https://warrantportal.kingcounty.gov/justtemplates" target="_blank" rel="noopener"><span class="link-dot"></span>KCPAO Search Warrant Templates<span class="link-host">warrantportal.kingcounty.gov</span></a></div>
+    </div>
+  </div>
+
+  <!-- LE DATABASES -->
+  <div class="cat-panel cat-db" data-cat="cat-db">
+    <div class="cat-header" onclick="togglePanel(this)">
+      <div class="cat-icon">🗄</div>
+      <div class="cat-label">LE Databases</div>
+      <div class="cat-count">12</div>
+      <div class="collapse-btn">&#9662;</div>
+    </div>
+    <div class="link-list">
+      <div class="sub-label">Commercial Data Aggregators</div>
+      <div class="link-item"><a href="https://clear.thomsonreuters.com" target="_blank" rel="noopener"><span class="link-dot"></span>CLEAR (Thomson Reuters)<span class="link-host">clear.thomsonreuters.com</span></a></div>
+      <div class="link-item"><a href="https://secure.accurint.com/app/bps/main" target="_blank" rel="noopener"><span class="link-dot"></span>Accurint (LexisNexis)<span class="link-host">secure.accurint.com</span></a></div>
+      <div class="link-item"><a href="https://search.flocksafety.com/search" target="_blank" rel="noopener"><span class="link-dot"></span>Flock Safety Search<span class="link-host">search.flocksafety.com</span></a></div>
+      <div class="sub-label">Criminal Justice Systems</div>
       <div class="link-item"><a href="https://www.justicexchange.com/jxp/" target="_blank" rel="noopener"><span class="link-dot"></span>NPlex (JusticeXchange)<span class="link-host">justicexchange.com</span></a></div>
       <div class="link-item"><a href="https://www.vinelink.com/vinelink/initSearchForm.do?siteId=15000" target="_blank" rel="noopener"><span class="link-dot"></span>VINELink<span class="link-host">vinelink.com</span></a></div>
-      <div class="link-item"><a href="https://facecheck.id/" target="_blank" rel="noopener"><span class="link-dot"></span>FaceCheck (Reverse Image)<span class="link-host">facecheck.id</span></a></div>
-      <div class="link-item"><a href="https://tools.osintnewsletter.com/" target="_blank" rel="noopener"><span class="link-dot"></span>OSINT Tools Library<span class="link-host">osintnewsletter.com</span></a></div>
-      <div class="link-item"><a href="https://trax.zetx.com/" target="_blank" rel="noopener"><span class="link-dot"></span>TraX (Zetx)<span class="link-host">zetx.com</span></a></div>
-      <div class="link-item"><a href="https://hsin.dhs.gov/dhs/cymc/Pages/default.aspx" target="_blank" rel="noopener"><span class="link-dot"></span>DHS HSIN – CYMC<span class="link-host">hsin.dhs.gov</span></a></div>
-      <div class="link-item"><a href="https://hsin.dhs.gov/collab/CIN/Pages/default.aspx" target="_blank" rel="noopener"><span class="link-dot"></span>DHS HSIN – CIN<span class="link-host">hsin.dhs.gov</span></a></div>
-      <div class="link-item"><a href="https://www.infragard.org/" target="_blank" rel="noopener"><span class="link-dot"></span>InfraGard<span class="link-host">infragard.org</span></a></div>
-      <div class="link-item"><a href="https://lesp.ncmec.org/share/dashboard" target="_blank" rel="noopener"><span class="link-dot"></span>NCMEC Share<span class="link-host">ncmec.org</span></a></div>
-      <div class="link-item"><a href="https://npd.pentester.com/" target="_blank" rel="noopener"><span class="link-dot"></span>NPD Breach Check<span class="link-host">pentester.com</span></a></div>
-      <div class="link-item"><a href="https://www.the-sz.com/products/usbid/" target="_blank" rel="noopener"><span class="link-dot"></span>USB ID Database<span class="link-host">the-sz.com</span></a></div>
-      <div class="link-item"><a href="https://www.familytreenow.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Family Tree Now<span class="link-host">familytreenow.com</span></a></div>
-      <div class="link-item"><a href="https://www.sans.org/posters/" target="_blank" rel="noopener"><span class="link-dot"></span>SANS Cheat Sheets<span class="link-host">sans.org</span></a></div>
-      <div class="link-item"><a href="https://vincheck.info/free-license-plate-lookup" target="_blank" rel="noopener"><span class="link-dot"></span>VINCheck Plate Search<span class="link-host">vincheck.info</span></a></div>
-      <div class="link-item"><a href="https://www.search.org/resources/isp-list/" target="_blank" rel="noopener"><span class="link-dot"></span>SEARCH ISP List<span class="link-host">search.org</span></a></div>
+      <div class="link-item"><a href="https://www.swbtrac.com/" target="_blank" rel="noopener"><span class="link-dot"></span>SWB TRAC<span class="link-host">swbtrac.com</span></a></div>
       <div class="link-item"><a href="https://www.icaccops.com/users/" target="_blank" rel="noopener"><span class="link-dot"></span>ICAC COPS<span class="link-host">icaccops.com</span></a></div>
       <div class="link-item"><a href="https://www.cjis.gov/" target="_blank" rel="noopener"><span class="link-dot"></span>LEEP / CJIS<span class="link-host">cjis.gov</span></a></div>
-      <div class="link-item"><a href="https://www.vindecoder.net/" target="_blank" rel="noopener"><span class="link-dot"></span>VIN Decoder<span class="link-host">vindecoder.net</span></a></div>
-      <div class="link-item"><a href="https://www.ncfi.usss.gov/fpr/login.xhtml?faces-redirect=true&amp;dswid=-8086" target="_blank" rel="noopener"><span class="link-dot"></span>USSS NCFI / FPR<span class="link-host">ncfi.usss.gov</span></a></div>
+      <div class="sub-label">Federal &amp; Fusion Portals</div>
+      <div class="link-item"><a href="https://hsin.dhs.gov/dhs/cymc/Pages/default.aspx" target="_blank" rel="noopener"><span class="link-dot"></span>DHS HSIN – CYMC<span class="link-host">hsin.dhs.gov</span></a></div>
+      <div class="link-item"><a href="https://hsin.dhs.gov/collab/CIN/Pages/default.aspx" target="_blank" rel="noopener"><span class="link-dot"></span>DHS HSIN – CIN<span class="link-host">hsin.dhs.gov</span></a></div>
+      <div class="link-item"><a href="https://infragard.fbi.gov/" target="_blank" rel="noopener"><span class="link-dot"></span>InfraGard<span class="link-host">infragard.fbi.gov</span></a></div>
+      <div class="link-item"><a href="https://lesp.ncmec.org/share/dashboard" target="_blank" rel="noopener"><span class="link-dot"></span>NCMEC Share<span class="link-host">lesp.ncmec.org</span></a></div>
     </div>
   </div>
 
-  <!-- SOCIAL MEDIA OSINT -->
-  <div class="cat-panel cat-sm" data-cat="cat-sm">
+  <!-- OSINT & PEOPLE -->
+  <div class="cat-panel cat-osint" data-cat="cat-osint">
     <div class="cat-header" onclick="togglePanel(this)">
-      <div class="cat-icon">📡</div>
-      <div class="cat-label">Social Media OSINT</div>
-      <div class="cat-count">3</div>
-      <div class="collapse-btn">▾</div>
+      <div class="cat-icon">🔍</div>
+      <div class="cat-label">OSINT &amp; People</div>
+      <div class="cat-count">10</div>
+      <div class="collapse-btn">&#9662;</div>
     </div>
     <div class="link-list">
-      <div class="link-item"><a href="https://sowdust.github.io/fb-search/" target="_blank" rel="noopener"><span class="link-dot"></span>Facebook Search (SowDust)<span class="link-host">github.io</span></a></div>
-      <div class="link-item"><a href="https://followerwonk.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Followerwonk (Twitter Analytics)<span class="link-host">followerwonk.com</span></a></div>
+      <div class="sub-label">People &amp; Identity</div>
+      <div class="link-item"><a href="https://facecheck.id/" target="_blank" rel="noopener"><span class="link-dot"></span>FaceCheck (Reverse Face Search)<span class="link-host">facecheck.id</span></a></div>
+      <div class="link-item"><a href="https://www.familytreenow.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Family Tree Now<span class="link-host">familytreenow.com</span></a></div>
+      <div class="link-item"><a href="https://npd.pentester.com/" target="_blank" rel="noopener"><span class="link-dot"></span>NPD Breach Check<span class="link-host">npd.pentester.com</span></a></div>
       <div class="link-item"><a href="https://namechk.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Namechk (Username Search)<span class="link-host">namechk.com</span></a></div>
+      <div class="sub-label">Social Media</div>
+      <div class="link-item"><a href="https://sowdust.github.io/fb-search/" target="_blank" rel="noopener"><span class="link-dot"></span>Facebook Search (SowDust)<span class="link-host">sowdust.github.io</span></a></div>
+      <div class="link-item"><a href="https://followerwonk.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Followerwonk (X / Twitter Analytics)<span class="link-host">followerwonk.com</span></a></div>
+      <div class="sub-label">Vehicles</div>
+      <div class="link-item"><a href="https://vincario.com/" target="_blank" rel="noopener"><span class="link-dot"></span>VIN Decoder (Vincario)<span class="link-host">vincario.com</span></a></div>
+      <div class="link-item"><a href="https://vincheck.info/free-license-plate-lookup" target="_blank" rel="noopener"><span class="link-dot"></span>VINCheck Plate Search<span class="link-host">vincheck.info</span></a></div>
+      <div class="sub-label">Tool Collections</div>
+      <div class="link-item"><a href="https://tools.osintnewsletter.com/" target="_blank" rel="noopener"><span class="link-dot"></span>OSINT Tools Library<span class="link-host">tools.osintnewsletter.com</span></a></div>
+      <div class="link-item"><a href="https://inteltechniques.com/tools/" target="_blank" rel="noopener"><span class="link-dot"></span>IntelTechniques Tools (Bazzell)<span class="link-host">inteltechniques.com</span></a></div>
     </div>
   </div>
 
-  <!-- CRYPTO -->
+  <!-- CRYPTOCURRENCY -->
   <div class="cat-panel cat-crypto" data-cat="cat-crypto">
     <div class="cat-header" onclick="togglePanel(this)">
       <div class="cat-icon">₿</div>
       <div class="cat-label">Cryptocurrency</div>
       <div class="cat-count">10</div>
-      <div class="collapse-btn">▾</div>
+      <div class="collapse-btn">&#9662;</div>
     </div>
     <div class="link-list">
-      <div class="link-item"><a href="https://field.chainalysis.com/search" target="_blank" rel="noopener"><span class="link-dot"></span>Chainalysis Field<span class="link-host">chainalysis.com</span></a></div>
-      <div class="link-item"><a href="https://reactor.chainalysis.com/graphs/list" target="_blank" rel="noopener"><span class="link-dot"></span>Chainalysis Reactor<span class="link-host">chainalysis.com</span></a></div>
-      <div class="link-item"><a href="https://chainabuse.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Chain Abuse<span class="link-host">chainabuse.com</span></a></div>
-      <div class="link-item"><a href="https://www.bitcoinwhoswho.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Bitcoin Who's Who<span class="link-host">bitcoinwhoswho.com</span></a></div>
-      <div class="link-item"><a href="https://blockchair.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Blockchair<span class="link-host">blockchair.com</span></a></div>
+      <div class="sub-label">Investigation Platforms</div>
+      <div class="link-item"><a href="https://reactor.chainalysis.com/graphs/list" target="_blank" rel="noopener"><span class="link-dot"></span>Chainalysis Reactor<span class="link-host">reactor.chainalysis.com</span></a></div>
+      <div class="link-item"><a href="https://field.chainalysis.com/search" target="_blank" rel="noopener"><span class="link-dot"></span>Chainalysis Field<span class="link-host">field.chainalysis.com</span></a></div>
+      <div class="link-item"><a href="https://app.deconflict.com/dashboard" target="_blank" rel="noopener"><span class="link-dot"></span>Deconflict<span class="link-host">app.deconflict.com</span></a></div>
+      <div class="sub-label">Block Explorers</div>
+      <div class="link-item"><a href="https://blockchair.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Blockchair (Multi-Chain)<span class="link-host">blockchair.com</span></a></div>
       <div class="link-item"><a href="https://mempool.space/" target="_blank" rel="noopener"><span class="link-dot"></span>Mempool (BTC Explorer)<span class="link-host">mempool.space</span></a></div>
       <div class="link-item"><a href="https://etherscan.io/" target="_blank" rel="noopener"><span class="link-dot"></span>Etherscan (ETH Explorer)<span class="link-host">etherscan.io</span></a></div>
-      <div class="link-item"><a href="https://app.deconflict.com/dashboard" target="_blank" rel="noopener"><span class="link-dot"></span>Deconflict<span class="link-host">deconflict.com</span></a></div>
       <div class="link-item"><a href="https://mainnet.observer/" target="_blank" rel="noopener"><span class="link-dot"></span>mainnet.observer<span class="link-host">mainnet.observer</span></a></div>
-      <div class="link-item"><a href="https://support.chainalysis.com/hc/en-us/articles/360059668211-Chainalysis-entity-categories" target="_blank" rel="noopener"><span class="link-dot"></span>Chainalysis Entity Categories<span class="link-host">chainalysis.com</span></a></div>
+      <div class="sub-label">Attribution &amp; Abuse Reporting</div>
+      <div class="link-item"><a href="https://chainabuse.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Chain Abuse<span class="link-host">chainabuse.com</span></a></div>
+      <div class="link-item"><a href="https://www.bitcoinwhoswho.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Bitcoin Who&#x27;s Who<span class="link-host">bitcoinwhoswho.com</span></a></div>
+      <div class="sub-label">Reference</div>
+      <div class="link-item"><a href="https://support.chainalysis.com/hc/en-us/articles/360059668211-Chainalysis-entity-categories" target="_blank" rel="noopener"><span class="link-dot"></span>Chainalysis Entity Categories<span class="link-host">support.chainalysis.com</span></a></div>
     </div>
   </div>
 
-  <!-- NETWORK -->
+  <!-- NETWORK & INFRA -->
   <div class="cat-panel cat-net" data-cat="cat-net">
     <div class="cat-header" onclick="togglePanel(this)">
       <div class="cat-icon">🌐</div>
-      <div class="cat-label">Network / IP</div>
-      <div class="cat-count">32</div>
-      <div class="collapse-btn">▾</div>
+      <div class="cat-label">Network &amp; Infra</div>
+      <div class="cat-count">34</div>
+      <div class="collapse-btn">&#9662;</div>
     </div>
     <div class="link-list">
-      <div class="link-item"><a href="https://www.shodan.io/" target="_blank" rel="noopener"><span class="link-dot"></span>Shodan<span class="link-host">shodan.io</span></a></div>
+      <div class="sub-label">IP Lookup &amp; Geolocation</div>
       <div class="link-item"><a href="https://ipinfo.io/account/search" target="_blank" rel="noopener"><span class="link-dot"></span>IPinfo.io<span class="link-host">ipinfo.io</span></a></div>
-	  <div class="link-item"><a href="https://proxycheck.io/" target="_blank" rel="noopener"><span class="link-dot"></span>ProxyCheck.io<span class="link-host">proxycheck.io</span></a></div>
-      <div class="link-item"><a href="https://www.ipqualityscore.com/" target="_blank" rel="noopener"><span class="link-dot"></span>IP Quality Score<span class="link-host">ipqualityscore.com</span></a></div>
-      <div class="link-item"><a href="https://www.ipvoid.com/" target="_blank" rel="noopener"><span class="link-dot"></span>IP Void<span class="link-host">ipvoid.com</span></a></div>
       <div class="link-item"><a href="https://www.maxmind.com/en/home" target="_blank" rel="noopener"><span class="link-dot"></span>MaxMind (GeoIP)<span class="link-host">maxmind.com</span></a></div>
-      <div class="link-item"><a href="https://wigle.net/" target="_blank" rel="noopener"><span class="link-dot"></span>WiGLE (WiFi Mapping)<span class="link-host">wigle.net</span></a></div>
-      <div class="link-item"><a href="https://mxtoolbox.com/NetworkTools.aspx" target="_blank" rel="noopener"><span class="link-dot"></span>MXToolbox<span class="link-host">mxtoolbox.com</span></a></div>
-      <div class="link-item"><a href="https://mha.azurewebsites.net/" target="_blank" rel="noopener"><span class="link-dot"></span>Email Header Analyzer<span class="link-host">azurewebsites.net</span></a></div>
-      <div class="link-item"><a href="https://mxtoolbox.com/EmailHeaders.aspx" target="_blank" rel="noopener"><span class="link-dot"></span>Email Header (MXToolbox)<span class="link-host">mxtoolbox.com</span></a></div>
-      <div class="link-item"><a href="https://toolbox.googleapps.com/apps/messageheader/analyzeheader" target="_blank" rel="noopener"><span class="link-dot"></span>Google Message Header Tool<span class="link-host">googleapps.com</span></a></div>
-      <div class="link-item"><a href="https://whois.domaintools.com/" target="_blank" rel="noopener"><span class="link-dot"></span>DomainTools (Whois)<span class="link-host">domaintools.com</span></a></div>
+      <div class="link-item"><a href="https://www.infobyip.com/" target="_blank" rel="noopener"><span class="link-dot"></span>InfoByIP<span class="link-host">infobyip.com</span></a></div>
+      <div class="link-item"><a href="https://isc.sans.edu/tools/whereis.html" target="_blank" rel="noopener"><span class="link-dot"></span>SANS ISC WhereIs (IP Country)<span class="link-host">isc.sans.edu</span></a></div>
+      <div class="link-item"><a href="https://centralops.net/co/" target="_blank" rel="noopener"><span class="link-dot"></span>CentralOps Network Tools<span class="link-host">centralops.net</span></a></div>
+      <div class="link-item"><a href="https://mxtoolbox.com/NetworkTools.aspx" target="_blank" rel="noopener"><span class="link-dot"></span>MXToolbox Network Tools<span class="link-host">mxtoolbox.com</span></a></div>
+      <div class="sub-label">IP Reputation, Proxy &amp; Tor</div>
+      <div class="link-item"><a href="https://www.ipqualityscore.com/" target="_blank" rel="noopener"><span class="link-dot"></span>IP Quality Score<span class="link-host">ipqualityscore.com</span></a></div>
+      <div class="link-item"><a href="https://proxycheck.io/" target="_blank" rel="noopener"><span class="link-dot"></span>ProxyCheck.io<span class="link-host">proxycheck.io</span></a></div>
+      <div class="link-item"><a href="https://www.ipvoid.com/" target="_blank" rel="noopener"><span class="link-dot"></span>IP Void<span class="link-host">ipvoid.com</span></a></div>
+      <div class="link-item"><a href="https://whoer.net/" target="_blank" rel="noopener"><span class="link-dot"></span>Whoer.net<span class="link-host">whoer.net</span></a></div>
+      <div class="link-item"><a href="https://www.ipqualityscore.com/tor-ip-address-check" target="_blank" rel="noopener"><span class="link-dot"></span>Tor IP Check (IPQS)<span class="link-host">ipqualityscore.com</span></a></div>
+      <div class="link-item"><a href="https://metrics.torproject.org/exonerator.html" target="_blank" rel="noopener"><span class="link-dot"></span>ExoneraTor (Tor Relay History)<span class="link-host">metrics.torproject.org</span></a></div>
+      <div class="link-item"><a href="https://onion.ail-project.org/" target="_blank" rel="noopener"><span class="link-dot"></span>Onion Lookup (AIL)<span class="link-host">onion.ail-project.org</span></a></div>
+      <div class="sub-label">Domain, URL &amp; Site Analysis</div>
+      <div class="link-item"><a href="https://whois.domaintools.com/" target="_blank" rel="noopener"><span class="link-dot"></span>DomainTools Whois<span class="link-host">whois.domaintools.com</span></a></div>
       <div class="link-item"><a href="https://urlscan.io/" target="_blank" rel="noopener"><span class="link-dot"></span>URLScan.io<span class="link-host">urlscan.io</span></a></div>
       <div class="link-item"><a href="https://www.urlvoid.com/" target="_blank" rel="noopener"><span class="link-dot"></span>URL Void<span class="link-host">urlvoid.com</span></a></div>
-      <div class="link-item"><a href="https://metrics.torproject.org/exonerator.html" target="_blank" rel="noopener"><span class="link-dot"></span>ExoneraTor<span class="link-host">torproject.org</span></a></div>
-      <div class="link-item"><a href="https://www.ipqualityscore.com/tor-ip-address-check" target="_blank" rel="noopener"><span class="link-dot"></span>Tor IP Check<span class="link-host">ipqualityscore.com</span></a></div>
-      <div class="link-item"><a href="https://onion.ail-project.org/" target="_blank" rel="noopener"><span class="link-dot"></span>Onion Lookup (AIL)<span class="link-host">ail-project.org</span></a></div>
-      <div class="link-item"><a href="https://iknowwhatyoudownload.com/en/peer/" target="_blank" rel="noopener"><span class="link-dot"></span>iKnowWhatYouDownload<span class="link-host">iknowwhatyoudownload.com</span></a></div>
-      <div class="link-item"><a href="https://web.archive.org/" target="_blank" rel="noopener"><span class="link-dot"></span>Wayback Machine<span class="link-host">archive.org</span></a></div>
-      <div class="link-item"><a href="https://www.exploit-db.com/google-hacking-database" target="_blank" rel="noopener"><span class="link-dot"></span>Google Hacking DB (GHDB)<span class="link-host">exploit-db.com</span></a></div>
-      <div class="link-item"><a href="https://www.wireshark.org/tools/oui-lookup.html" target="_blank" rel="noopener"><span class="link-dot"></span>Wireshark OUI Lookup<span class="link-host">wireshark.org</span></a></div>
-      <div class="link-item"><a href="https://sitecheck.sucuri.net/" target="_blank" rel="noopener"><span class="link-dot"></span>Sucuri SiteCheck<span class="link-host">sucuri.net</span></a></div>
-      <div class="link-item"><a href="https://isc.sans.edu/tools/whereis.html" target="_blank" rel="noopener"><span class="link-dot"></span>SANS ISC WhereIs (IP Country)<span class="link-host">sans.edu</span></a></div>
-      <div class="link-item"><a href="https://www.infobyip.com/" target="_blank" rel="noopener"><span class="link-dot"></span>InfoByIP<span class="link-host">infobyip.com</span></a></div>
-      <div class="link-item"><a href="https://whoer.net/" target="_blank" rel="noopener"><span class="link-dot"></span>Whoer.net<span class="link-host">whoer.net</span></a></div>
+      <div class="link-item"><a href="https://sitecheck.sucuri.net/" target="_blank" rel="noopener"><span class="link-dot"></span>Sucuri SiteCheck<span class="link-host">sitecheck.sucuri.net</span></a></div>
       <div class="link-item"><a href="https://www.magereport.com/" target="_blank" rel="noopener"><span class="link-dot"></span>MageReport.com<span class="link-host">magereport.com</span></a></div>
-      <div class="link-item"><a href="https://aruljohn.com/mac.pl" target="_blank" rel="noopener"><span class="link-dot"></span>MAC / OUI Lookup<span class="link-host">aruljohn.com</span></a></div>
-      <div class="link-item"><a href="https://centralops.net/co/" target="_blank" rel="noopener"><span class="link-dot"></span>CentralOps Network Tools<span class="link-host">centralops.net</span></a></div>
+      <div class="link-item"><a href="https://web.archive.org/" target="_blank" rel="noopener"><span class="link-dot"></span>Wayback Machine<span class="link-host">web.archive.org</span></a></div>
+      <div class="sub-label">Email Header Analysis</div>
+      <div class="link-item"><a href="https://mha.azurewebsites.net/" target="_blank" rel="noopener"><span class="link-dot"></span>Email Header Analyzer (MHA)<span class="link-host">mha.azurewebsites.net</span></a></div>
+      <div class="link-item"><a href="https://mxtoolbox.com/EmailHeaders.aspx" target="_blank" rel="noopener"><span class="link-dot"></span>Email Headers (MXToolbox)<span class="link-host">mxtoolbox.com</span></a></div>
+      <div class="link-item"><a href="https://toolbox.googleapps.com/apps/messageheader/analyzeheader" target="_blank" rel="noopener"><span class="link-dot"></span>Google Message Header Tool<span class="link-host">toolbox.googleapps.com</span></a></div>
       <div class="link-item"><a href="https://www.ip2location.com/free/email-tracer" target="_blank" rel="noopener"><span class="link-dot"></span>IP2Location Email Header Tracer<span class="link-host">ip2location.com</span></a></div>
-      <div class="link-item"><a href="https://iplogger.org/" target="_blank" rel="noopener"><span class="link-dot"></span>IPLogger<span class="link-host">iplogger.org</span></a></div>
-      <div class="link-item"><a href="https://hackernoon.com/forcing-a-device-to-disconnect-from-wifi-using-a-deauthentication-attack-f664b9940142" target="_blank" rel="noopener"><span class="link-dot"></span>WiFi Deauth Attack (Article)<span class="link-host">hackernoon.com</span></a></div>
+      <div class="sub-label">Attack Surface &amp; Recon</div>
+      <div class="link-item"><a href="https://www.shodan.io/" target="_blank" rel="noopener"><span class="link-dot"></span>Shodan<span class="link-host">shodan.io</span></a></div>
+      <div class="link-item"><a href="https://www.exploit-db.com/google-hacking-database" target="_blank" rel="noopener"><span class="link-dot"></span>Google Hacking DB (GHDB)<span class="link-host">exploit-db.com</span></a></div>
       <div class="link-item"><a href="https://www.stationx.net/nmap-cheat-sheet/" target="_blank" rel="noopener"><span class="link-dot"></span>Nmap Cheat Sheet (StationX)<span class="link-host">stationx.net</span></a></div>
+      <div class="link-item"><a href="https://cdn.comparitech.com/wp-content/uploads/2019/06/Nmap-Cheat-Sheet.pdf" target="_blank" rel="noopener"><span class="link-dot"></span>Nmap Cheat Sheet (PDF)<span class="link-host">cdn.comparitech.com</span></a></div>
+      <div class="sub-label">Wireless &amp; Hardware IDs</div>
+      <div class="link-item"><a href="https://wigle.net/" target="_blank" rel="noopener"><span class="link-dot"></span>WiGLE (WiFi Mapping)<span class="link-host">wigle.net</span></a></div>
+      <div class="link-item"><a href="https://www.wireshark.org/tools/oui-lookup.html" target="_blank" rel="noopener"><span class="link-dot"></span>Wireshark OUI Lookup<span class="link-host">wireshark.org</span></a></div>
+      <div class="link-item"><a href="https://aruljohn.com/mac.pl" target="_blank" rel="noopener"><span class="link-dot"></span>MAC / OUI Lookup<span class="link-host">aruljohn.com</span></a></div>
+      <div class="link-item"><a href="https://www.the-sz.com/products/usbid/" target="_blank" rel="noopener"><span class="link-dot"></span>USB ID Database<span class="link-host">the-sz.com</span></a></div>
+      <div class="link-item"><a href="https://hackernoon.com/forcing-a-device-to-disconnect-from-wifi-using-a-deauthentication-attack-f664b9940142" target="_blank" rel="noopener"><span class="link-dot"></span>WiFi Deauth Attack (Article)<span class="link-host">hackernoon.com</span></a></div>
+      <div class="sub-label">Peer-to-Peer &amp; Tracking</div>
+      <div class="link-item"><a href="https://iknowwhatyoudownload.com/en/peer/" target="_blank" rel="noopener"><span class="link-dot"></span>iKnowWhatYouDownload<span class="link-host">iknowwhatyoudownload.com</span></a></div>
+      <div class="link-item"><a href="https://iplogger.org/" target="_blank" rel="noopener"><span class="link-dot"></span>IPLogger<span class="link-host">iplogger.org</span></a></div>
     </div>
   </div>
 
-  <!-- MALWARE -->
+  <!-- MALWARE & THREAT INTEL -->
   <div class="cat-panel cat-mal" data-cat="cat-mal">
     <div class="cat-header" onclick="togglePanel(this)">
-      <div class="cat-icon">🦠</div>
+      <div class="cat-icon">☣</div>
       <div class="cat-label">Malware &amp; Threat Intel</div>
-      <div class="cat-count">11</div>
-      <div class="collapse-btn">▾</div>
+      <div class="cat-count">17</div>
+      <div class="collapse-btn">&#9662;</div>
     </div>
     <div class="link-list">
+      <div class="sub-label">Threat Intelligence Platforms</div>
+      <div class="link-item"><a href="https://advantage.mandiant.com/auth/login?returnTo=%2F" target="_blank" rel="noopener"><span class="link-dot"></span>Mandiant Advantage<span class="link-host">advantage.mandiant.com</span></a></div>
+      <div class="link-item"><a href="https://cerberus.slcyber.io/" target="_blank" rel="noopener"><span class="link-dot"></span>Cerberus (Searchlight Cyber)<span class="link-host">cerberus.slcyber.io</span></a></div>
+      <div class="link-item"><a href="https://app.flashpoint.io/home/dashboard" target="_blank" rel="noopener"><span class="link-dot"></span>Flashpoint<span class="link-host">app.flashpoint.io</span></a></div>
+      <div class="link-item"><a href="https://app.darkblueintel.com/search/data/?sort=0" target="_blank" rel="noopener"><span class="link-dot"></span>DarkBlue Intel<span class="link-host">app.darkblueintel.com</span></a></div>
+      <div class="link-item"><a href="https://app.osint.industries/" target="_blank" rel="noopener"><span class="link-dot"></span>OSINT Industries<span class="link-host">app.osint.industries</span></a></div>
+      <div class="sub-label">File &amp; Sample Analysis</div>
       <div class="link-item"><a href="https://www.virustotal.com/gui/home/upload" target="_blank" rel="noopener"><span class="link-dot"></span>VirusTotal<span class="link-host">virustotal.com</span></a></div>
       <div class="link-item"><a href="https://any.run/" target="_blank" rel="noopener"><span class="link-dot"></span>ANY.RUN (Interactive Sandbox)<span class="link-host">any.run</span></a></div>
       <div class="link-item"><a href="https://hybrid-analysis.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Hybrid Analysis (Falcon Sandbox)<span class="link-host">hybrid-analysis.com</span></a></div>
-      <div class="link-item"><a href="https://cloud.vmray.com/" target="_blank" rel="noopener"><span class="link-dot"></span>VMRay<span class="link-host">vmray.com</span></a></div>
+      <div class="link-item"><a href="https://cloud.vmray.com/" target="_blank" rel="noopener"><span class="link-dot"></span>VMRay<span class="link-host">cloud.vmray.com</span></a></div>
       <div class="link-item"><a href="https://www.joesecurity.org/" target="_blank" rel="noopener"><span class="link-dot"></span>Joe Sandbox<span class="link-host">joesecurity.org</span></a></div>
-      <div class="link-item"><a href="https://rockyraccoon.io/insights/" target="_blank" rel="noopener"><span class="link-dot"></span>EchoTrail<span class="link-host">rockyraccoon.io</span></a></div>
-      <div class="link-item"><a href="https://www.dehashed.com/" target="_blank" rel="noopener"><span class="link-dot"></span>DeHashed<span class="link-host">dehashed.com</span></a></div>
-      <div class="link-item"><a href="https://haveibeenpwned.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Have I Been Pwned<span class="link-host">haveibeenpwned.com</span></a></div>
-      <div class="link-item"><a href="https://objective-see.org/malware.html" target="_blank" rel="noopener"><span class="link-dot"></span>Objective-See (Mac Malware)<span class="link-host">objective-see.org</span></a></div>
+      <div class="link-item"><a href="https://echotrail.io/insights/" target="_blank" rel="noopener"><span class="link-dot"></span>EchoTrail<span class="link-host">echotrail.io</span></a></div>
+      <div class="sub-label">Sample &amp; Hash Repositories</div>
       <div class="link-item"><a href="https://github.com/ytisf/theZoo" target="_blank" rel="noopener"><span class="link-dot"></span>theZoo – Live Malware Repo<span class="link-host">github.com</span></a></div>
+      <div class="link-item"><a href="https://github.com/Objective-see/Malware" target="_blank" rel="noopener"><span class="link-dot"></span>Objective-See Mac Malware<span class="link-host">github.com</span></a></div>
       <div class="link-item"><a href="https://sourceforge.net/projects/mantarayforensics/files/VirusShare_Hash_Sets/" target="_blank" rel="noopener"><span class="link-dot"></span>MantaRay VirusShare Hash Sets<span class="link-host">sourceforge.net</span></a></div>
+      <div class="link-item"><a href="https://www.nist.gov/itl/csd/secure-systems-and-applications/national-software-reference-library-nsrl/nsrl-download-0" target="_blank" rel="noopener"><span class="link-dot"></span>NIST NSRL RDS Hash Sets<span class="link-host">nist.gov</span></a></div>
+      <div class="sub-label">Breach &amp; Credential Data</div>
+      <div class="link-item"><a href="https://haveibeenpwned.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Have I Been Pwned<span class="link-host">haveibeenpwned.com</span></a></div>
+      <div class="link-item"><a href="https://www.dehashed.com/" target="_blank" rel="noopener"><span class="link-dot"></span>DeHashed<span class="link-host">dehashed.com</span></a></div>
     </div>
   </div>
 
@@ -532,162 +587,184 @@
       <div class="cat-icon">🔒</div>
       <div class="cat-label">Ransomware</div>
       <div class="cat-count">8</div>
-      <div class="collapse-btn">▾</div>
+      <div class="collapse-btn">&#9662;</div>
     </div>
     <div class="link-list">
+      <div class="sub-label">Leak Site Trackers</div>
       <div class="link-item"><a href="https://www.ransomware.live/" target="_blank" rel="noopener"><span class="link-dot"></span>Ransomware.live<span class="link-host">ransomware.live</span></a></div>
-      <div class="link-item"><a href="https://ransomwatch.telemetry.ltd/#/README" target="_blank" rel="noopener"><span class="link-dot"></span>RansomWatch<span class="link-host">telemetry.ltd</span></a></div>
+      <div class="link-item"><a href="https://ransomwatch.telemetry.ltd/#/README" target="_blank" rel="noopener"><span class="link-dot"></span>RansomWatch<span class="link-host">ransomwatch.telemetry.ltd</span></a></div>
       <div class="link-item"><a href="https://www.ransomlook.io/" target="_blank" rel="noopener"><span class="link-dot"></span>RansomLook<span class="link-host">ransomlook.io</span></a></div>
-      <div class="link-item"><a href="https://id-ransomware.malwarehunterteam.com/" target="_blank" rel="noopener"><span class="link-dot"></span>ID Ransomware<span class="link-host">malwarehunterteam.com</span></a></div>
+      <div class="link-item"><a href="https://www.ransomware.live/group/clop" target="_blank" rel="noopener"><span class="link-dot"></span>Ransomware.live – Clop<span class="link-host">ransomware.live</span></a></div>
+      <div class="sub-label">Identification &amp; Decryption</div>
+      <div class="link-item"><a href="https://id-ransomware.malwarehunterteam.com/" target="_blank" rel="noopener"><span class="link-dot"></span>ID Ransomware<span class="link-host">id-ransomware.malwarehunterteam.com</span></a></div>
       <div class="link-item"><a href="https://www.emsisoft.com/en/ransomware-decryption/" target="_blank" rel="noopener"><span class="link-dot"></span>Emsisoft Decryption Tools<span class="link-host">emsisoft.com</span></a></div>
       <div class="link-item"><a href="https://www.nomoreransom.org/en/index.html" target="_blank" rel="noopener"><span class="link-dot"></span>No More Ransom Project<span class="link-host">nomoreransom.org</span></a></div>
-      <div class="link-item"><a href="https://github.com/fastfire/deepdarkCTI/blob/main/ransomware_gang.md" target="_blank" rel="noopener"><span class="link-dot"></span>deepdarkCTI (GitHub)<span class="link-host">github.com</span></a></div>
-      <div class="link-item"><a href="https://www.ransomware.live/group/clop" target="_blank" rel="noopener"><span class="link-dot"></span>Ransomware.live – Clop<span class="link-host">ransomware.live</span></a></div>
+      <div class="sub-label">Group Intelligence</div>
+      <div class="link-item"><a href="https://github.com/fastfire/deepdarkCTI/blob/main/ransomware_gang.md" target="_blank" rel="noopener"><span class="link-dot"></span>deepdarkCTI – Ransomware Gangs<span class="link-host">github.com</span></a></div>
     </div>
   </div>
 
-  <!-- SOFTWARE & TOOLS -->
+  <!-- FORENSIC TOOLS -->
   <div class="cat-panel cat-sw" data-cat="cat-sw">
     <div class="cat-header" onclick="togglePanel(this)">
-      <div class="cat-icon">⚙</div>
-      <div class="cat-label">Software &amp; Tools</div>
-      <div class="cat-count">23</div>
-      <div class="collapse-btn">▾</div>
+      <div class="cat-icon">🛠</div>
+      <div class="cat-label">Forensic Tools</div>
+      <div class="cat-count">21</div>
+      <div class="collapse-btn">&#9662;</div>
     </div>
     <div class="link-list">
-      <div class="link-item"><a href="https://gchq.github.io/CyberChef/" target="_blank" rel="noopener"><span class="link-dot"></span>CyberChef<span class="link-host">github.io</span></a></div>
-      <div class="link-item"><a href="https://regex101.com/" target="_blank" rel="noopener"><span class="link-dot"></span>regex101<span class="link-host">regex101.com</span></a></div>
-      <div class="link-item"><a href="https://dencode.com/string" target="_blank" rel="noopener"><span class="link-dot"></span>DenCode (Encoder/Decoder)<span class="link-host">dencode.com</span></a></div>
-      <div class="link-item"><a href="https://crackstation.net/" target="_blank" rel="noopener"><span class="link-dot"></span>CrackStation (Hash Crack)<span class="link-host">crackstation.net</span></a></div>
-      <div class="link-item"><a href="https://support.magnetforensics.com/s/downloads/axiom-cyber-software-and-downloads" target="_blank" rel="noopener"><span class="link-dot"></span>Magnet Downloads<span class="link-host">magnetforensics.com</span></a></div>
-      <div class="link-item"><a href="https://artifacts.magnetforensics.com/CommunitiesArtifactExchangeHome" target="_blank" rel="noopener"><span class="link-dot"></span>Artifact Exchange<span class="link-host">magnetforensics.com</span></a></div>
-      <div class="link-item"><a href="https://community.cellebrite.com/s/login/" target="_blank" rel="noopener"><span class="link-dot"></span>MyCellebrite Portal<span class="link-host">cellebrite.com</span></a></div>
-      <div class="link-item"><a href="https://github.com/abrignoni" target="_blank" rel="noopener"><span class="link-dot"></span>LEAPP (abrignoni / GitHub)<span class="link-host">github.com</span></a></div>
-      <div class="link-item"><a href="https://github.com/mac4n6/APOLLO" target="_blank" rel="noopener"><span class="link-dot"></span>APOLLO (Mac/iOS Forensics)<span class="link-host">github.com</span></a></div>
-      <div class="link-item"><a href="https://tzworks.com/" target="_blank" rel="noopener"><span class="link-dot"></span>TZWorks<span class="link-host">tzworks.com</span></a></div>
-      <div class="link-item"><a href="https://www.x-ways.net/xwf/" target="_blank" rel="noopener"><span class="link-dot"></span>X-Ways Forensics Download<span class="link-host">x-ways.net</span></a></div>
+      <div class="sub-label">Vendor Portals &amp; Downloads</div>
+      <div class="link-item"><a href="https://support.magnetforensics.com/s/downloads/axiom-cyber-software-and-downloads" target="_blank" rel="noopener"><span class="link-dot"></span>Magnet Downloads<span class="link-host">support.magnetforensics.com</span></a></div>
+      <div class="link-item"><a href="https://artifacts.magnetforensics.com/CommunitiesArtifactExchangeHome" target="_blank" rel="noopener"><span class="link-dot"></span>Magnet Artifact Exchange<span class="link-host">artifacts.magnetforensics.com</span></a></div>
+      <div class="link-item"><a href="https://community.cellebrite.com/s/login/" target="_blank" rel="noopener"><span class="link-dot"></span>MyCellebrite Portal<span class="link-host">community.cellebrite.com</span></a></div>
       <div class="link-item"><a href="https://belkasoft.com/cgi-bin/customer.cgi?action=keys" target="_blank" rel="noopener"><span class="link-dot"></span>Belkasoft Customer Portal<span class="link-host">belkasoft.com</span></a></div>
-      <div class="link-item"><a href="https://scripts.search.org/sign-in/factor-one" target="_blank" rel="noopener"><span class="link-dot"></span>SEARCH Scripts<span class="link-host">search.org</span></a></div>
-      <div class="link-item"><a href="https://inteltechniques.com/tools/" target="_blank" rel="noopener"><span class="link-dot"></span>Intel Techniques (Bazzell)<span class="link-host">inteltechniques.com</span></a></div>
-      <div class="link-item"><a href="https://github.com/meirwah/awesome-incident-response" target="_blank" rel="noopener"><span class="link-dot"></span>Awesome IR (GitHub)<span class="link-host">github.com</span></a></div>
-      <div class="link-item"><a href="https://github.com/danielmiessler/SecLists" target="_blank" rel="noopener"><span class="link-dot"></span>SecLists (GitHub)<span class="link-host">github.com</span></a></div>
-      <div class="link-item"><a href="https://www.nist.gov/itl/csd/secure-systems-and-applications/national-software-reference-library-nsrl/nsrl-download-0" target="_blank" rel="noopener"><span class="link-dot"></span>NIST RDS Hash Sets<span class="link-host">nist.gov</span></a></div>
-      <div class="link-item"><a href="https://www.grc.com/haystack.htm" target="_blank" rel="noopener"><span class="link-dot"></span>GRC Password Haystack<span class="link-host">grc.com</span></a></div>
-      <div class="link-item"><a href="https://codeworld.codes/" target="_blank" rel="noopener"><span class="link-dot"></span>codeworld.codes<span class="link-host">codeworld.codes</span></a></div>
-      <div class="link-item"><a href="https://ihateregex.io/" target="_blank" rel="noopener"><span class="link-dot"></span>i Hate Regex - The Regex Cheat Sheet<span class="link-host">ihateregex.io</span></a></div>
+      <div class="link-item"><a href="https://www.x-ways.net/forensics/" target="_blank" rel="noopener"><span class="link-dot"></span>X-Ways Forensics<span class="link-host">x-ways.net</span></a></div>
       <div class="link-item"><a href="https://adfsolutions.com/downloads/" target="_blank" rel="noopener"><span class="link-dot"></span>ADF Solutions Downloads<span class="link-host">adfsolutions.com</span></a></div>
+      <div class="link-item"><a href="https://tzworks.com/" target="_blank" rel="noopener"><span class="link-dot"></span>TZWorks<span class="link-host">tzworks.com</span></a></div>
       <div class="link-item"><a href="https://www.justnet.org/app/fieldsearch/download.aspx" target="_blank" rel="noopener"><span class="link-dot"></span>Field Search (NLECTC)<span class="link-host">justnet.org</span></a></div>
+      <div class="sub-label">Open-Source Forensic Tools</div>
+      <div class="link-item"><a href="https://github.com/abrignoni" target="_blank" rel="noopener"><span class="link-dot"></span>LEAPP (abrignoni)<span class="link-host">github.com</span></a></div>
+      <div class="link-item"><a href="https://github.com/mac4n6/APOLLO" target="_blank" rel="noopener"><span class="link-dot"></span>APOLLO (mac4n6)<span class="link-host">github.com</span></a></div>
+      <div class="link-item"><a href="https://github.com/meirwah/awesome-incident-response" target="_blank" rel="noopener"><span class="link-dot"></span>Awesome Incident Response<span class="link-host">github.com</span></a></div>
+      <div class="link-item"><a href="https://scripts.search.org/sign-in/factor-one" target="_blank" rel="noopener"><span class="link-dot"></span>SEARCH Scripts<span class="link-host">scripts.search.org</span></a></div>
+      <div class="sub-label">Encoding, Regex &amp; Data Utilities</div>
+      <div class="link-item"><a href="https://gchq.github.io/CyberChef/" target="_blank" rel="noopener"><span class="link-dot"></span>CyberChef<span class="link-host">gchq.github.io</span></a></div>
+      <div class="link-item"><a href="https://dencode.com/string" target="_blank" rel="noopener"><span class="link-dot"></span>DenCode (Encoder / Decoder)<span class="link-host">dencode.com</span></a></div>
+      <div class="link-item"><a href="https://regex101.com/" target="_blank" rel="noopener"><span class="link-dot"></span>regex101<span class="link-host">regex101.com</span></a></div>
+      <div class="link-item"><a href="https://ihateregex.io/" target="_blank" rel="noopener"><span class="link-dot"></span>iHateRegex Cheat Sheet<span class="link-host">ihateregex.io</span></a></div>
+      <div class="link-item"><a href="https://codeworld.codes/" target="_blank" rel="noopener"><span class="link-dot"></span>codeworld.codes<span class="link-host">codeworld.codes</span></a></div>
+      <div class="sub-label">Passwords &amp; Hash Cracking</div>
+      <div class="link-item"><a href="https://crackstation.net/" target="_blank" rel="noopener"><span class="link-dot"></span>CrackStation (Hash Crack)<span class="link-host">crackstation.net</span></a></div>
+      <div class="link-item"><a href="https://github.com/danielmiessler/SecLists" target="_blank" rel="noopener"><span class="link-dot"></span>SecLists<span class="link-host">github.com</span></a></div>
       <div class="link-item"><a href="https://www.skullsecurity.org/wiki" target="_blank" rel="noopener"><span class="link-dot"></span>SkullSecurity Password Lists<span class="link-host">skullsecurity.org</span></a></div>
+      <div class="link-item"><a href="https://www.grc.com/haystack.htm" target="_blank" rel="noopener"><span class="link-dot"></span>GRC Password Haystack<span class="link-host">grc.com</span></a></div>
     </div>
   </div>
 
-  <!-- CELL PHONE FORENSICS -->
+  <!-- MOBILE & DEVICE -->
   <div class="cat-panel cat-cell" data-cat="cat-cell">
     <div class="cat-header" onclick="togglePanel(this)">
       <div class="cat-icon">📱</div>
-      <div class="cat-label">Cell / Mobile Forensics</div>
-      <div class="cat-count">13</div>
-      <div class="collapse-btn">▾</div>
+      <div class="cat-label">Mobile &amp; Device</div>
+      <div class="cat-count">14</div>
+      <div class="collapse-btn">&#9662;</div>
     </div>
     <div class="link-list">
-      <div class="link-item"><a href="https://community.cellebrite.com/s/supported-device" target="_blank" rel="noopener"><span class="link-dot"></span>Cellebrite Supported Devices<span class="link-host">cellebrite.com</span></a></div>
+      <div class="sub-label">Tool Support &amp; Compatibility</div>
+      <div class="link-item"><a href="https://community.cellebrite.com/s/supported-device" target="_blank" rel="noopener"><span class="link-dot"></span>Cellebrite Supported Devices<span class="link-host">community.cellebrite.com</span></a></div>
+      <div class="link-item"><a href="https://www.mobiledit.com/download-list/phone-drivers" target="_blank" rel="noopener"><span class="link-dot"></span>MOBILedit USB Phone Drivers<span class="link-host">mobiledit.com</span></a></div>
+      <div class="link-item"><a href="https://twrp.me/Devices/" target="_blank" rel="noopener"><span class="link-dot"></span>TWRP Devices<span class="link-host">twrp.me</span></a></div>
+      <div class="sub-label">Device Identification</div>
       <div class="link-item"><a href="https://fccid.io/" target="_blank" rel="noopener"><span class="link-dot"></span>FCC ID Search<span class="link-host">fccid.io</span></a></div>
       <div class="link-item"><a href="https://www.imei.info/" target="_blank" rel="noopener"><span class="link-dot"></span>IMEI.info<span class="link-host">imei.info</span></a></div>
-      <div class="link-item"><a href="https://www.numlookup.com/" target="_blank" rel="noopener"><span class="link-dot"></span>NumLookup<span class="link-host">numlookup.com</span></a></div>
       <div class="link-item"><a href="https://www.gsmarena.com/" target="_blank" rel="noopener"><span class="link-dot"></span>GSMArena<span class="link-host">gsmarena.com</span></a></div>
       <div class="link-item"><a href="https://www.phonescoop.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Phone Scoop<span class="link-host">phonescoop.com</span></a></div>
-      <div class="link-item"><a href="https://phonedb.net/" target="_blank" rel="noopener"><span class="link-dot"></span>PDAdb.net<span class="link-host">phonedb.net</span></a></div>
+      <div class="link-item"><a href="https://phonedb.net/" target="_blank" rel="noopener"><span class="link-dot"></span>PhoneDB (PDAdb.net)<span class="link-host">phonedb.net</span></a></div>
       <div class="link-item"><a href="https://www.ifixit.com/Teardown" target="_blank" rel="noopener"><span class="link-dot"></span>iFixit Teardowns<span class="link-host">ifixit.com</span></a></div>
-      <div class="link-item"><a href="https://twrp.me/Devices/" target="_blank" rel="noopener"><span class="link-dot"></span>TWRP Devices<span class="link-host">twrp.me</span></a></div>
+      <div class="sub-label">Phone Numbers &amp; Carriers</div>
+      <div class="link-item"><a href="https://www.numlookup.com/" target="_blank" rel="noopener"><span class="link-dot"></span>NumLookup<span class="link-host">numlookup.com</span></a></div>
       <div class="link-item"><a href="https://numberingplans.com/" target="_blank" rel="noopener"><span class="link-dot"></span>International Numbering Plans<span class="link-host">numberingplans.com</span></a></div>
-      <div class="link-item"><a href="https://www.mobiledit.com/download-list/phone-drivers" target="_blank" rel="noopener"><span class="link-dot"></span>MOBILedit USB Phone Drivers<span class="link-host">mobiledit.com</span></a></div>
-      <div class="link-item"><a href="https://forum.xda-developers.com/general/security/guide-unlock-forgotten-private-mode-pin-t3758011" target="_blank" rel="noopener"><span class="link-dot"></span>XDA – Unlock Private Mode<span class="link-host">xda-developers.com</span></a></div>
-      <div class="link-item"><a href="https://groups.google.com/forum/?nomobile=true#!forum/mobile-device-forensics-and-analysis/home" target="_blank" rel="noopener"><span class="link-dot"></span>Mobile Device Forensics Group<span class="link-host">google.com</span></a></div>
+      <div class="sub-label">CDR &amp; Tower Analysis</div>
+      <div class="link-item"><a href="https://trax.lexisnexisrisk.com/" target="_blank" rel="noopener"><span class="link-dot"></span>TraX (LexisNexis / ZetX)<span class="link-host">trax.lexisnexisrisk.com</span></a></div>
+      <div class="sub-label">Community &amp; Technique</div>
+      <div class="link-item"><a href="https://xdaforums.com/t/guide-unlock-forgotten-private-mode-pin.3758011/" target="_blank" rel="noopener"><span class="link-dot"></span>XDA – Unlock Private Mode<span class="link-host">xdaforums.com</span></a></div>
+      <div class="link-item"><a href="https://groups.google.com/forum/?nomobile=true#!forum/mobile-device-forensics-and-analysis/home" target="_blank" rel="noopener"><span class="link-dot"></span>Mobile Device Forensics Group<span class="link-host">groups.google.com</span></a></div>
     </div>
   </div>
 
-  <!-- TRAINING -->
+  <!-- TRAINING & CERTS -->
   <div class="cat-panel cat-train" data-cat="cat-train">
     <div class="cat-header" onclick="togglePanel(this)">
       <div class="cat-icon">🎓</div>
-      <div class="cat-label">Training &amp; Certifications</div>
-      <div class="cat-count">18</div>
-      <div class="collapse-btn">▾</div>
+      <div class="cat-label">Training &amp; Certs</div>
+      <div class="cat-count">21</div>
+      <div class="collapse-btn">&#9662;</div>
     </div>
     <div class="link-list">
-      <div class="link-item"><a href="https://training.13cubed.com/" target="_blank" rel="noopener"><span class="link-dot"></span>13Cubed Training<span class="link-host">13cubed.com</span></a></div>
+      <div class="sub-label">Forensics &amp; IR Training</div>
+      <div class="link-item"><a href="https://training.13cubed.com/" target="_blank" rel="noopener"><span class="link-dot"></span>13Cubed Training<span class="link-host">training.13cubed.com</span></a></div>
       <div class="link-item"><a href="https://nullsec.us/" target="_blank" rel="noopener"><span class="link-dot"></span>ØSecurity (nullsec.us)<span class="link-host">nullsec.us</span></a></div>
-      <div class="link-item"><a href="https://fbiva.fbiacademy.edu" target="_blank" rel="noopener"><span class="link-dot"></span>FBI Virtual Academy<span class="link-host">fbiacademy.edu</span></a></div>
-      <div class="link-item"><a href="https://ondemand.sans.org/" target="_blank" rel="noopener"><span class="link-dot"></span>SANS OnDemand<span class="link-host">sans.org</span></a></div>
+      <div class="link-item"><a href="https://dfirdominican.com/" target="_blank" rel="noopener"><span class="link-dot"></span>DFIR Dominican<span class="link-host">dfirdominican.com</span></a></div>
+      <div class="link-item"><a href="https://ondemand.sans.org/" target="_blank" rel="noopener"><span class="link-dot"></span>SANS OnDemand<span class="link-host">ondemand.sans.org</span></a></div>
       <div class="link-item"><a href="https://www.sans.org/account" target="_blank" rel="noopener"><span class="link-dot"></span>SANS Institute Account<span class="link-host">sans.org</span></a></div>
-      <div class="link-item"><a href="https://cp.certmetrics.com/comptia/" target="_blank" rel="noopener"><span class="link-dot"></span>CompTIA CertMetrics<span class="link-host">certmetrics.com</span></a></div>
-      <div class="link-item"><a href="https://www.pearsonvue.com/us/en/comptia.html" target="_blank" rel="noopener"><span class="link-dot"></span>CompTIA Pearson VUE<span class="link-host">pearsonvue.com</span></a></div>
-      <div class="link-item"><a href="https://www.pletraining.com/" target="_blank" rel="noopener"><span class="link-dot"></span>PLE Training (CPI)<span class="link-host">pletraining.com</span></a></div>
-      <div class="link-item"><a href="https://www.diontraining.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Dion Training<span class="link-host">diontraining.com</span></a></div>
-      <div class="link-item"><a href="https://www.udemy.com/home/my-courses/learning/" target="_blank" rel="noopener"><span class="link-dot"></span>Udemy (My Courses)<span class="link-host">udemy.com</span></a></div>
-      <div class="link-item"><a href="https://www.professormesser.com/professor-messer-archives/n10-007/n10-007-training-course/" target="_blank" rel="noopener"><span class="link-dot"></span>Prof. Messer – Network+<span class="link-host">professormesser.com</span></a></div>
-      <div class="link-item"><a href="https://learn.comptia.org/app/comptia-cm-learn-network#study-plan/structured" target="_blank" rel="noopener"><span class="link-dot"></span>CompTIA Network+ Learn<span class="link-host">comptia.org</span></a></div>
-      <div class="link-item"><a href="https://networkengineering.stackexchange.com/questions/7106/how-do-you-calculate-the-prefix-network-subnet-and-host-numbers" target="_blank" rel="noopener"><span class="link-dot"></span>Subnet Math (StackExchange)<span class="link-host">stackexchange.com</span></a></div>
-      <div class="link-item"><a href="https://oznetnerd.com/subnetting-made-easy-part-6/#more-905451" target="_blank" rel="noopener"><span class="link-dot"></span>Subnetting Made Easy<span class="link-host">oznetnerd.com</span></a></div>
-      <div class="link-item"><a href="https://www.skillpipe.com/#/account/login" target="_blank" rel="noopener"><span class="link-dot"></span>Skillpipe (Courseware)<span class="link-host">skillpipe.com</span></a></div>
-      <div class="link-item"><a href="https://www.professormesser.com/security-plus/sy0-501/sy0-501-training-course/" target="_blank" rel="noopener"><span class="link-dot"></span>Prof. Messer – Security+<span class="link-host">professormesser.com</span></a></div>
-      <div class="link-item"><a href="https://arewesaferyet.blogspot.com/2016/02/preparing-to-take-sans-giac-exam.html" target="_blank" rel="noopener"><span class="link-dot"></span>Preparing for a GIAC Exam<span class="link-host">blogspot.com</span></a></div>
       <div class="link-item"><a href="https://www.sans.org/webcasts/" target="_blank" rel="noopener"><span class="link-dot"></span>SANS Webcast Archive<span class="link-host">sans.org</span></a></div>
+      <div class="link-item"><a href="https://www.sans.org/posters/" target="_blank" rel="noopener"><span class="link-dot"></span>SANS Cheat Sheets / Posters<span class="link-host">sans.org</span></a></div>
+      <div class="link-item"><a href="https://arewesaferyet.blogspot.com/2016/02/preparing-to-take-sans-giac-exam.html" target="_blank" rel="noopener"><span class="link-dot"></span>Preparing for a GIAC Exam<span class="link-host">arewesaferyet.blogspot.com</span></a></div>
+      <div class="sub-label">Law Enforcement Academies</div>
+      <div class="link-item"><a href="https://fbiva.fbiacademy.edu" target="_blank" rel="noopener"><span class="link-dot"></span>FBI Virtual Academy<span class="link-host">fbiva.fbiacademy.edu</span></a></div>
+      <div class="link-item"><a href="https://www.ncfi.usss.gov/fpr/" target="_blank" rel="noopener"><span class="link-dot"></span>USSS NCFI / FPR<span class="link-host">ncfi.usss.gov</span></a></div>
+      <div class="link-item"><a href="https://www.pletraining.com/" target="_blank" rel="noopener"><span class="link-dot"></span>PLE Training (CPI)<span class="link-host">pletraining.com</span></a></div>
+      <div class="sub-label">CompTIA &amp; Vendor Certification</div>
+      <div class="link-item"><a href="https://cp.certmetrics.com/comptia/" target="_blank" rel="noopener"><span class="link-dot"></span>CompTIA CertMetrics<span class="link-host">cp.certmetrics.com</span></a></div>
+      <div class="link-item"><a href="https://www.pearsonvue.com/us/en/comptia.html" target="_blank" rel="noopener"><span class="link-dot"></span>CompTIA Pearson VUE<span class="link-host">pearsonvue.com</span></a></div>
+      <div class="link-item"><a href="https://learn.comptia.org/app/comptia-cm-learn-network#study-plan/structured" target="_blank" rel="noopener"><span class="link-dot"></span>CompTIA Network+ Learn<span class="link-host">learn.comptia.org</span></a></div>
+      <div class="link-item"><a href="https://www.diontraining.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Dion Training<span class="link-host">diontraining.com</span></a></div>
+      <div class="link-item"><a href="https://www.professormesser.com/security-plus/sy0-701/sy0-701-video/sy0-701-comptia-security-plus-course/" target="_blank" rel="noopener"><span class="link-dot"></span>Prof. Messer – Security+ (SY0-701)<span class="link-host">professormesser.com</span></a></div>
+      <div class="link-item"><a href="https://www.professormesser.com/network-plus/n10-009/n10-009-video/n10-009-training-course/" target="_blank" rel="noopener"><span class="link-dot"></span>Prof. Messer – Network+ (N10-009)<span class="link-host">professormesser.com</span></a></div>
+      <div class="link-item"><a href="https://www.skillpipe.com/#/account/login" target="_blank" rel="noopener"><span class="link-dot"></span>Skillpipe (Courseware)<span class="link-host">skillpipe.com</span></a></div>
+      <div class="link-item"><a href="https://www.udemy.com/home/my-courses/learning/" target="_blank" rel="noopener"><span class="link-dot"></span>Udemy (My Courses)<span class="link-host">udemy.com</span></a></div>
+      <div class="sub-label">Networking Fundamentals</div>
+      <div class="link-item"><a href="https://networkengineering.stackexchange.com/questions/7106/how-do-you-calculate-the-prefix-network-subnet-and-host-numbers" target="_blank" rel="noopener"><span class="link-dot"></span>Subnet Math (StackExchange)<span class="link-host">networkengineering.stackexchange.com</span></a></div>
+      <div class="link-item"><a href="https://oznetnerd.com/subnetting-made-easy-part-6/#more-905451" target="_blank" rel="noopener"><span class="link-dot"></span>Subnetting Made Easy<span class="link-host">oznetnerd.com</span></a></div>
     </div>
   </div>
 
-  <!-- MISCELLANEOUS -->
-  <div class="cat-panel cat-misc" data-cat="cat-misc">
-    <div class="cat-header" onclick="togglePanel(this)">
-      <div class="cat-icon">📂</div>
-      <div class="cat-label">Miscellaneous</div>
-      <div class="cat-count">3</div>
-      <div class="collapse-btn">▾</div>
-    </div>
-    <div class="link-list">
-      <div class="link-item"><a href="https://www.r-studio.com/finding-raid-parameters.html" target="_blank" rel="noopener"><span class="link-dot"></span>Finding RAID Parameters<span class="link-host">r-studio.com</span></a></div>
-      <div class="link-item"><a href="https://www.stolencamerafinder.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Stolen Camera Finder<span class="link-host">stolencamerafinder.com</span></a></div>
-      <div class="link-item"><a href="https://cdn.comparitech.com/wp-content/uploads/2019/06/Nmap-Cheat-Sheet.pdf" target="_blank" rel="noopener"><span class="link-dot"></span>Nmap Cheat Sheet (PDF)<span class="link-host">comparitech.com</span></a></div>
-    </div>
-  </div>
-
+  <!-- INDIANA -->
   <div class="cat-panel cat-in" data-cat="cat-in">
     <div class="cat-header" onclick="togglePanel(this)">
-      <div class="cat-icon">🏛️</div>
+      <div class="cat-icon">🏛</div>
       <div class="cat-label">Indiana</div>
-      <div class="cat-count">14</div>
-      <div class="collapse-btn">▾</div>
+      <div class="cat-count">13</div>
+      <div class="collapse-btn">&#9662;</div>
     </div>
     <div class="link-list">
-      <div class="link-item"><a href="https://www.randymajors.org/civil-townships-on-google-maps" target="_blank" rel="noopener"><span class="link-dot"></span>Civil Townships Map<span class="link-host">randymajors.org</span></a></div>
-      <div class="link-item"><a href="https://maps.deflock.org/#map=9/41.445860/-85.429602" target="_blank" rel="noopener"><span class="link-dot"></span>DeFlock ALPR Map (IN)<span class="link-host">deflock.org</span></a></div>
+      <div class="sub-label">Courts &amp; Case Records</div>
       <div class="link-item"><a href="https://www.doxpop.com/prod/" target="_blank" rel="noopener"><span class="link-dot"></span>Doxpop<span class="link-host">doxpop.com</span></a></div>
-      <div class="link-item"><a href="https://offenderlocator.idoc.in.gov/idoc-ofs-1.0.2/ofs" target="_blank" rel="noopener"><span class="link-dot"></span>IDOC Offender Locator<span class="link-host">idoc.in.gov</span></a></div>
+      <div class="link-item"><a href="https://mycase.in.gov/" target="_blank" rel="noopener"><span class="link-dot"></span>MyCase / Odyssey<span class="link-host">mycase.in.gov</span></a></div>
       <div class="link-item"><a href="https://mycourts.in.gov/" target="_blank" rel="noopener"><span class="link-dot"></span>INcite / ECWS<span class="link-host">mycourts.in.gov</span></a></div>
       <div class="link-item"><a href="https://iga.in.gov/laws/2025/ic/titles/35" target="_blank" rel="noopener"><span class="link-dot"></span>Indiana Code Title 35<span class="link-host">iga.in.gov</span></a></div>
-      <div class="link-item"><a href="https://www.in.gov/indiana-national-guard/adjutant-generals-office/indiana-civilian-cyber-corps/" target="_blank" rel="noopener"><span class="link-dot"></span>Indiana National Guard: Indiana Civilian Cyber Corps ICCC<span class="link-host">in.gov</span></a></div>
-      <div class="link-item"><a href="https://in.accessgov.com/isp-apra" target="_blank" rel="noopener"><span class="link-dot"></span>ISP APRA Request<span class="link-host">accessgov.com</span></a></div>
-      <div class="link-item"><a href="https://warrantportal.kingcounty.gov/justtemplates" target="_blank" rel="noopener"><span class="link-dot"></span>KCPAO Search Warrant Templates<span class="link-host">warrantportal.kingcounty.gov</span></a></div>
-      <div class="link-item"><a href="https://mycase.in.gov/" target="_blank" rel="noopener"><span class="link-dot"></span>MyCase / Odyssey<span class="link-host">mycase.in.gov</span></a></div>
-      <div class="link-item"><a href="https://forms.cloud.microsoft/pages/responsepage.aspx?id=ur-ZIQmkE0-wxBi0WTPYjYm7Tp03kNpJnnDgUKlwwnFURVVPQTlaRFQ3NDE0QlNGWTY5OVkxRVQ0SS4u" target="_blank" rel="noopener"><span class="link-dot"></span>NIVA Assistance Request<span class="link-host">forms.cloud.microsoft</span></a></div>
+      <div class="sub-label">Corrections &amp; Warrants</div>
+      <div class="link-item"><a href="https://offenderlocator.idoc.in.gov/idoc-ofs-1.0.2/ofs" target="_blank" rel="noopener"><span class="link-dot"></span>IDOC Offender Locator<span class="link-host">offenderlocator.idoc.in.gov</span></a></div>
       <div class="link-item"><a href="https://www.themostwanted.net/" target="_blank" rel="noopener"><span class="link-dot"></span>TheMostWanted (Warrants)<span class="link-host">themostwanted.net</span></a></div>
-      <div class="link-item"><a href="https://forms.cloud.microsoft/pages/responsepage.aspx?id=ur-ZIQmkE0-wxBi0WTPYjWjA2lEi9AhFp6sqzFDJXmNUQVQxSklQTFAxWUNWMlZWTzlEVE9STVZJQS4u" target="_blank" rel="noopener"><span class="link-dot"></span>TSU Search Warrant Repository<span class="link-host">forms.cloud.microsoft</span></a></div>
+      <div class="sub-label">Vehicles &amp; Geography</div>
       <div class="link-item"><a href="https://app.vhr.sos.in.gov/" target="_blank" rel="noopener"><span class="link-dot"></span>Vehicle History Report (SOS)<span class="link-host">app.vhr.sos.in.gov</span></a></div>
+      <div class="link-item"><a href="https://www.randymajors.org/civil-townships-on-google-maps" target="_blank" rel="noopener"><span class="link-dot"></span>Civil Townships Map<span class="link-host">randymajors.org</span></a></div>
+      <div class="link-item"><a href="https://maps.deflock.org/#map=9/41.445860/-85.429602" target="_blank" rel="noopener"><span class="link-dot"></span>DeFlock ALPR Map (IN)<span class="link-host">maps.deflock.org</span></a></div>
+      <div class="sub-label">State Agency Forms &amp; Programs</div>
+      <div class="link-item"><a href="https://in.accessgov.com/isp-apra" target="_blank" rel="noopener"><span class="link-dot"></span>ISP APRA Request<span class="link-host">in.accessgov.com</span></a></div>
+      <div class="link-item"><a href="https://forms.cloud.microsoft/pages/responsepage.aspx?id=ur-ZIQmkE0-wxBi0WTPYjWjA2lEi9AhFp6sqzFDJXmNUQVQxSklQTFAxWUNWMlZWTzlEVE9STVZJQS4u" target="_blank" rel="noopener"><span class="link-dot"></span>TSU Search Warrant Repository<span class="link-host">forms.cloud.microsoft</span></a></div>
+      <div class="link-item"><a href="https://forms.cloud.microsoft/pages/responsepage.aspx?id=ur-ZIQmkE0-wxBi0WTPYjYm7Tp03kNpJnnDgUKlwwnFURVVPQTlaRFQ3NDE0QlNGWTY5OVkxRVQ0SS4u" target="_blank" rel="noopener"><span class="link-dot"></span>NIVA Assistance Request<span class="link-host">forms.cloud.microsoft</span></a></div>
+      <div class="link-item"><a href="https://www.in.gov/indiana-national-guard/adjutant-generals-office/indiana-civilian-cyber-corps/" target="_blank" rel="noopener"><span class="link-dot"></span>Indiana Civilian Cyber Corps (ICCC)<span class="link-host">in.gov</span></a></div>
     </div>
   </div>
 
-
+  <!-- REFERENCE & MISC -->
+  <div class="cat-panel cat-misc" data-cat="cat-misc">
+    <div class="cat-header" onclick="togglePanel(this)">
+      <div class="cat-icon">📎</div>
+      <div class="cat-label">Reference &amp; Misc</div>
+      <div class="cat-count">2</div>
+      <div class="collapse-btn">&#9662;</div>
+    </div>
+    <div class="link-list">
+      <div class="sub-label">General</div>
+      <div class="link-item"><a href="https://www.r-studio.com/finding-raid-parameters.html" target="_blank" rel="noopener"><span class="link-dot"></span>Finding RAID Parameters<span class="link-host">r-studio.com</span></a></div>
+      <div class="link-item"><a href="https://www.stolencamerafinder.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Stolen Camera Finder<span class="link-host">stolencamerafinder.com</span></a></div>
+    </div>
+  </div>
 
 </div><!-- /grid -->
 
 <footer>
   <span>OSINT &amp; CYBER INVESTIGATION RESOURCES</span>
   <span class="sep">|</span>
-  <span id="result-count">169 resources</span>
+  <span id="result-count">170 resources</span>
   <span class="sep">|</span>
-  <span>11 categories</span>
+  <span>12 categories</span>
   <span class="sep">|</span>
-  <span>Updated 2026-08-07</span>
+  <span id="version">v2.0.1</span>
+  <span class="sep">|</span>
+  <span>Updated 2026-09-28</span>
 </footer>
 
 <script>
@@ -726,12 +803,22 @@
       panel.style.display = 'flex';
       let panelHasVisible = false;
 
-      panel.querySelectorAll('.link-item').forEach(item => {
-        const text = item.textContent.toLowerCase();
+      let subLabel = null;
+      let subHasVisible = false;
+
+      panel.querySelectorAll('.sub-label, .link-item').forEach(node => {
+        if (node.classList.contains('sub-label')) {
+          if (subLabel) subLabel.classList.toggle('hidden', !subHasVisible);
+          subLabel = node;
+          subHasVisible = false;
+          return;
+        }
+        const text = node.textContent.toLowerCase();
         const show = !query || text.includes(query);
-        item.classList.toggle('hidden', !show);
-        if (show) { panelHasVisible = true; visible++; }
+        node.classList.toggle('hidden', !show);
+        if (show) { panelHasVisible = true; subHasVisible = true; visible++; }
       });
+      if (subLabel) subLabel.classList.toggle('hidden', !subHasVisible);
 
       // Auto-expand panels with matches when searching
       if (query && panelHasVisible) {
@@ -740,7 +827,7 @@
     });
 
     document.getElementById('result-count').textContent =
-      query ? `${visible} match${visible !== 1 ? 'es' : ''}` : '169 resources';
+      query ? `${visible} match${visible !== 1 ? 'es' : ''}` : '170 resources';
   }
 
   searchInput.addEventListener('input', applyFilters);

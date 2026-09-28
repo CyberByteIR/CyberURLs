@@ -4,30 +4,44 @@
 
 Single-file, offline-capable link dashboard for OSINT and cyber investigation resources.
 
-**169 resources across 11 categories.** Open [`index.html`](index.html) in any browser — no build step, no server, no dependencies to install.
+**170 resources across 12 categories and 45 subcategories.** Open [`index.html`](index.html) in any browser — no build step, no server, no dependencies to install.
 
 ## Features
 
 - Live text filter across every link (name, category, host)
 - Category pill filters and collapsible panels
+- Named subcategory groups inside each panel; empty groups hide themselves while filtering
 - Per-link host labels
 - Keyboard-friendly, dark UI
 
 ## Categories
 
-| Category | Count |
-|---|---|
-| Investigations | 34 |
-| Social Media OSINT | 3 |
-| Cryptocurrency | 10 |
-| Network / IP | 32 |
-| Malware & Threat Intel | 11 |
-| Ransomware | 8 |
-| Software & Tools | 23 |
-| Cell / Mobile Forensics | 13 |
-| Training & Certifications | 18 |
-| Miscellaneous | 3 |
-| Indiana | 14 |
+| Category | Count | Subcategories |
+|---|---|---|
+| Legal Process | 8 | Provider Legal Process Portals · Templates & Reference |
+| LE Databases | 12 | Commercial Data Aggregators · Criminal Justice Systems · Federal & Fusion Portals |
+| OSINT & People | 10 | People & Identity · Social Media · Vehicles · Tool Collections |
+| Cryptocurrency | 10 | Investigation Platforms · Block Explorers · Attribution & Abuse Reporting · Reference |
+| Network & Infra | 34 | IP Lookup & Geolocation · IP Reputation, Proxy & Tor · Domain, URL & Site Analysis · Email Header Analysis · Attack Surface & Recon · Wireless & Hardware IDs · Peer-to-Peer & Tracking |
+| Malware & Threat Intel | 17 | Threat Intelligence Platforms · File & Sample Analysis · Sample & Hash Repositories · Breach & Credential Data |
+| Ransomware | 8 | Leak Site Trackers · Identification & Decryption · Group Intelligence |
+| Forensic Tools | 21 | Vendor Portals & Downloads · Open-Source Forensic Tools · Encoding, Regex & Data Utilities · Passwords & Hash Cracking |
+| Mobile & Device | 14 | Tool Support & Compatibility · Device Identification · Phone Numbers & Carriers · CDR & Tower Analysis · Community & Technique |
+| Training & Certs | 21 | Forensics & IR Training · Law Enforcement Academies · CompTIA & Vendor Certification · Networking Fundamentals |
+| Indiana | 13 | Courts & Case Records · Corrections & Warrants · Vehicles & Geography · State Agency Forms & Programs |
+| Reference & Misc | 2 | General |
+
+## Link status
+
+Last verified **2026-09-28** (automated HTTP probe, redirects followed).
+
+- 164 of 170 URLs confirmed reachable. Several return `401`/`403`/`429` to a scripted request — that is bot protection or an authentication gate, not link rot; they load normally in a browser.
+- Redirected to a new home, URLs updated: InfraGard (`infragard.fbi.gov`), EchoTrail (`echotrail.io`), ZetX TraX (`trax.lexisnexisrisk.com`), XDA (`xdaforums.com`), Objective-See Mac malware collection (GitHub).
+- Retired course versions replaced with current ones: Professor Messer Security+ `SY0-701` and Network+ `N10-009`.
+- `vindecoder.net` no longer answers on port 80 or 443; replaced with Vincario (`vincario.com`).
+- **Field Search (NLECTC)** — `justnet.org` serves an expired TLS certificate. The site is up, but browsers will show a certificate warning. Left in place, flagged here.
+- **IP Quality Score** and **IPLogger** resolve to `0.0.0.0` on filtered DNS resolvers (both appear on common threat blocklists). They are reachable from unfiltered networks.
+- **Meta / Facebook LE Portal** cannot be verified by script (Facebook returns `400` to unauthenticated non-browser requests).
 
 ## Notes
 
@@ -37,4 +51,4 @@ Single-file, offline-capable link dashboard for OSINT and cyber investigation re
 
 ## Editing
 
-Add a resource by copying an existing `.link-item` row into the relevant `.link-list`, then update that panel's `.cat-count`, the footer `resources` total, and the fallback count in the `applyFilters()` function.
+Add a resource by copying an existing `.link-item` row into the relevant `.sub-label` group inside a `.link-list`, then update that panel's `.cat-count`, the footer `resources` total, and the fallback count in the `applyFilters()` function.
