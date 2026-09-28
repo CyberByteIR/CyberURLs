@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="version" content="2.1.0">
+<meta name="version" content="2.1.1">
 <title>OSINT & Cyber Investigation Resources</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Barlow:wght@300;400;500;600;700&display=swap');
@@ -160,20 +160,21 @@
      the row-height gaps a CSS grid leaves around tall panels. */
   .grid {
     column-width: 320px;
-    column-gap: 1px;
-    background: var(--border);
-    padding: 0;
+    column-gap: 10px;
+    background: var(--bg);
+    padding: 10px;
     align-content: start;
   }
 
   /* === CATEGORY PANEL === */
   .cat-panel {
     background: var(--panel);
+    border: 1px solid var(--border);
     display: block;
     break-inside: avoid;
     -webkit-column-break-inside: avoid;
     page-break-inside: avoid;
-    margin-bottom: 1px;
+    margin-bottom: 10px;
     transition: background .15s;
   }
 
@@ -324,8 +325,8 @@
   .cat-legal  .cat-icon { color: #4db8ff; }
   .cat-cell   .cat-icon { color: #a8e063; }
   .cat-sw     .cat-icon { color: #60c8f0; }
-  .cat-train  .cat-icon { color: #ffd166; }
   .cat-misc   .cat-icon { color: #9ca3af; }
+  .cat-train  .cat-icon { color: #ffd166; }
   .cat-in     .cat-icon { color: #ff9d5c; }
 
   .cat-net    .cat-label { color: #3dd68c; }
@@ -337,8 +338,8 @@
   .cat-legal  .cat-label { color: #4db8ff; }
   .cat-cell   .cat-label { color: #a8e063; }
   .cat-sw     .cat-label { color: #60c8f0; }
-  .cat-train  .cat-label { color: #ffd166; }
   .cat-misc   .cat-label { color: #9ca3af; }
+  .cat-train  .cat-label { color: #ffd166; }
   .cat-in     .cat-label { color: #ff9d5c; }
 
   /* === STATUS BAR === */
@@ -348,7 +349,8 @@
     padding: 6px 24px;
     display: flex;
     align-items: center;
-    gap: 16px;
+    flex-wrap: wrap;
+    gap: 4px 16px;
     font-family: var(--mono);
     font-size: 10px;
     color: var(--text-muted);
@@ -392,8 +394,8 @@
     <button class="pill" data-cat="cat-legal">LEGAL</button>
     <button class="pill" data-cat="cat-cell">MOBILE</button>
     <button class="pill" data-cat="cat-sw">TOOLS</button>
-    <button class="pill" data-cat="cat-train">TRAINING</button>
     <button class="pill" data-cat="cat-misc">MISC</button>
+    <button class="pill" data-cat="cat-train">TRAINING</button>
     <button class="pill" data-cat="cat-in">INDIANA</button>
   </div>
 </div>
@@ -678,6 +680,21 @@
     </div>
   </div>
 
+  <!-- REFERENCE & MISC -->
+  <div class="cat-panel cat-misc" data-cat="cat-misc">
+    <div class="cat-header" onclick="togglePanel(this)">
+      <div class="cat-icon">📎</div>
+      <div class="cat-label">Reference &amp; Misc</div>
+      <div class="cat-count">2</div>
+      <div class="collapse-btn">&#9662;</div>
+    </div>
+    <div class="link-list">
+      <div class="sub-label">General</div>
+      <div class="link-item"><a href="https://www.r-studio.com/finding-raid-parameters.html" target="_blank" rel="noopener"><span class="link-dot"></span>Finding RAID Parameters<span class="link-host">r-studio.com</span></a></div>
+      <div class="link-item"><a href="https://www.stolencamerafinder.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Stolen Camera Finder<span class="link-host">stolencamerafinder.com</span></a></div>
+    </div>
+  </div>
+
   <!-- TRAINING & CERTS -->
   <div class="cat-panel cat-train" data-cat="cat-train">
     <div class="cat-header" onclick="togglePanel(this)">
@@ -712,21 +729,6 @@
       <div class="sub-label">Networking Fundamentals</div>
       <div class="link-item"><a href="https://networkengineering.stackexchange.com/questions/7106/how-do-you-calculate-the-prefix-network-subnet-and-host-numbers" target="_blank" rel="noopener"><span class="link-dot"></span>Subnet Math (StackExchange)<span class="link-host">networkengineering.stackexchange.com</span></a></div>
       <div class="link-item"><a href="https://oznetnerd.com/subnetting-made-easy-part-6/#more-905451" target="_blank" rel="noopener"><span class="link-dot"></span>Subnetting Made Easy<span class="link-host">oznetnerd.com</span></a></div>
-    </div>
-  </div>
-
-  <!-- REFERENCE & MISC -->
-  <div class="cat-panel cat-misc" data-cat="cat-misc">
-    <div class="cat-header" onclick="togglePanel(this)">
-      <div class="cat-icon">📎</div>
-      <div class="cat-label">Reference &amp; Misc</div>
-      <div class="cat-count">2</div>
-      <div class="collapse-btn">&#9662;</div>
-    </div>
-    <div class="link-list">
-      <div class="sub-label">General</div>
-      <div class="link-item"><a href="https://www.r-studio.com/finding-raid-parameters.html" target="_blank" rel="noopener"><span class="link-dot"></span>Finding RAID Parameters<span class="link-host">r-studio.com</span></a></div>
-      <div class="link-item"><a href="https://www.stolencamerafinder.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Stolen Camera Finder<span class="link-host">stolencamerafinder.com</span></a></div>
     </div>
   </div>
 
@@ -768,7 +770,7 @@
   <span class="sep">|</span>
   <span>12 categories</span>
   <span class="sep">|</span>
-  <span id="version">v2.1.0</span>
+  <span id="version">v2.1.1</span>
   <span class="sep">|</span>
   <span>Updated 2026-09-28</span>
 </footer>

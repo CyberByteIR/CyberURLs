@@ -2,6 +2,17 @@
 
 All notable changes to CyberURLs are documented here.
 
+## v2.1.1 — 2026-09-28
+
+### Changed
+
+- Reference & Misc now sits before Training & Certs in the panel and pill order.
+- Added 10px separation between columns and between stacked panels, with a 10px inset from the viewport edge. The grid background moved from `--border` to `--bg` so the widened gaps read as space rather than thick dividers, and panels gained a `1px solid var(--border)` outline to keep their edges defined.
+
+### Fixed
+
+- Footer no longer forces horizontal page scroll on narrow screens. It was a non-wrapping flex row, pushed past the viewport by the version badge added in v2.0.1; it now wraps. Verified zero horizontal overflow at 420, 700, 1000 and 1900px.
+
 ## v2.1.0 — 2026-09-28
 
 ### Added

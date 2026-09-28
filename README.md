@@ -28,8 +28,8 @@ Single-file, offline-capable link dashboard for OSINT and cyber investigation re
 | Legal Process | 8 | Provider Legal Process Portals · Templates & Reference |
 | Mobile & Device | 14 | Tool Support & Compatibility · Device Identification · Phone Numbers & Carriers · CDR & Tower Analysis · Community & Technique |
 | Forensic Tools | 21 | Vendor Portals & Downloads · Open-Source Forensic Tools · Encoding, Regex & Data Utilities · Passwords & Hash Cracking |
-| Training & Certs | 21 | Forensics & IR Training · Law Enforcement Academies · CompTIA & Vendor Certification · Networking Fundamentals |
 | Reference & Misc | 2 | General |
+| Training & Certs | 21 | Forensics & IR Training · Law Enforcement Academies · CompTIA & Vendor Certification · Networking Fundamentals |
 | Indiana | 13 | Courts & Case Records · Corrections & Warrants · Vehicles & Geography · State Agency Forms & Programs |
 
 ## Link status
