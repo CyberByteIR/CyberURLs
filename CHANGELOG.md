@@ -2,6 +2,14 @@
 
 All notable changes to CyberURLs are documented here.
 
+## v2.1.6 — 2026-09-28
+
+### Added
+
+- IR Kit (`github.com/CyberByteIR/IR_KIT`) under Forensic Tools → Open-Source Forensic Tools, marked as an author favorite. Confirmed publicly reachable before adding, since the dashboard is a public page.
+
+Forensic Tools goes 21 to 22, favorites 13 to 14, and the total to 171 resources.
+
 ## v2.1.5 — 2026-09-28
 
 ### Added
