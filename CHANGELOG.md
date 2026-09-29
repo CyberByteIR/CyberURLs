@@ -2,6 +2,12 @@
 
 All notable changes to CyberURLs are documented here.
 
+## v2.1.7 — 2026-09-28
+
+### Added
+
+- Footer link to the source repository, so anyone viewing the page can reach `index.html` and save their own copy. Opens in a new tab with `rel="noopener"`.
+
 ## v2.1.6 — 2026-09-28
 
 ### Added
