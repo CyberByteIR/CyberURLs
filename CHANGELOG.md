@@ -2,6 +2,17 @@
 
 All notable changes to CyberURLs are documented here.
 
+## v2.1.5 — 2026-09-28
+
+### Added
+
+- Gold star marking the author's favorites on 13 entries: IPinfo.io, ProxyCheck.io, URLScan.io, CentralOps Network Tools, Email Header Analyzer (MHA), Wireshark OUI Lookup, OSINT Industries, VirusTotal, Ransomware.live, RansomLook, Mempool, SEARCH ISP List and CyberChef. The star replaces the standard dot on the same 5px footprint, so names stay aligned and row heights are unchanged.
+- Footer legend reading "★ author's favorite", plus a tooltip on each star, so the marker explains itself.
+
+### Changed
+
+- USSS NCFI / FPR moved from Training & Certs → Law Enforcement Academies to LE Databases → Federal & Fusion Portals. LE Databases goes 12 to 13, Training & Certs 22 to 21; the total stays 170.
+
 ## v2.1.4 — 2026-09-28
 
 ### Changed

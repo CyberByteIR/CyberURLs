@@ -12,6 +12,8 @@ Single-file, offline-capable link dashboard for OSINT and cyber investigation re
 - Category pill filters and collapsible panels
 - Named subcategory groups inside each panel; empty groups and empty panels hide themselves while filtering
 - Multi-column layout that packs panels vertically, so a tall category leaves no gap beside the short ones
+- Gold star marks the author's favorites, on the same footprint as the standard dot so names stay
+  aligned; a footer legend and a per-star tooltip say what it means
 - Per-link host labels
 - Responsive down to 320px: full-width search, a single scrollable pill row,
   larger touch targets and safe-area padding for notched phones
@@ -26,12 +28,12 @@ Single-file, offline-capable link dashboard for OSINT and cyber investigation re
 | Ransomware | 6 | Leak Site Trackers · Identification & Decryption · Group Intelligence |
 | Cryptocurrency | 10 | Investigation Platforms · Block Explorers · Attribution & Abuse Reporting · Reference |
 | OSINT & People | 11 | People & Identity · Social Media · Vehicles · Tool Collections |
-| LE Databases | 12 | Commercial Data Aggregators · Criminal Justice Systems · Federal & Fusion Portals |
+| LE Databases | 13 | Commercial Data Aggregators · Criminal Justice Systems · Federal & Fusion Portals |
 | Legal Process | 8 | Provider Legal Process Portals · Templates & Reference |
 | Mobile & Device | 14 | Tool Support & Compatibility · Device Identification · Phone Numbers & Carriers · CDR & Tower Analysis · Community & Technique |
 | Forensic Tools | 21 | Vendor Portals & Downloads · Open-Source Forensic Tools · Encoding, Regex & Data Utilities · Passwords & Hash Cracking |
 | Reference & Misc | 2 | General |
-| Training & Certs | 22 | Forensics & IR Training · Law Enforcement Academies · CompTIA & Vendor Certification · Networking Fundamentals |
+| Training & Certs | 21 | Forensics & IR Training · Law Enforcement Academies · CompTIA & Vendor Certification · Networking Fundamentals |
 | Indiana | 13 | Courts & Case Records · Corrections & Warrants · Vehicles & Geography · State Agency Forms & Programs |
 
 ## Link status
