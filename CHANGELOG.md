@@ -2,6 +2,24 @@
 
 All notable changes to CyberURLs are documented here.
 
+## v2.1.3 — 2026-09-28
+
+### Fixed
+
+- Mobile layout, via a single `@media (max-width: 680px)` block. The page remains one self-contained HTML file.
+  - Search field was 46px wide on a 375px screen — the wrapped pill rows starved the flex row. The bar now stacks, giving the field the full width (347px at 375px).
+  - Search font raised to 16px so iOS Safari no longer zooms the page on focus.
+  - Filter pills changed from four wrapped rows (94px) to one horizontally scrollable row (27px).
+  - Footer is no longer sticky on phones, where it permanently cost 54px of an 812px viewport.
+  - Touch targets enlarged: link rows 28px to 38px, roomier category headers.
+  - Net effect: 83px of vertical space recovered above the fold at 375px.
+
+### Added
+
+- `viewport-fit=cover` with `env(safe-area-inset-*)` padding for notched phones, and `text-size-adjust: 100%` to prevent mobile text inflation.
+
+Desktop rendering is unchanged above 680px; 768px tablets keep the desktop layout.
+
 ## v2.1.2 — 2026-09-28
 
 ### Added

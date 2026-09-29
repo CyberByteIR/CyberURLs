@@ -13,6 +13,8 @@ Single-file, offline-capable link dashboard for OSINT and cyber investigation re
 - Named subcategory groups inside each panel; empty groups and empty panels hide themselves while filtering
 - Multi-column layout that packs panels vertically, so a tall category leaves no gap beside the short ones
 - Per-link host labels
+- Responsive down to 320px: full-width search, a single scrollable pill row,
+  larger touch targets and safe-area padding for notched phones
 - Keyboard-friendly, dark UI
 
 ## Categories
