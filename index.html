@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="version" content="2.1.1">
+<meta name="version" content="2.1.2">
 <title>OSINT & Cyber Investigation Resources</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Barlow:wght@300;400;500;600;700&display=swap');
@@ -542,7 +542,7 @@
     <div class="cat-header" onclick="togglePanel(this)">
       <div class="cat-icon">🔍</div>
       <div class="cat-label">OSINT &amp; People</div>
-      <div class="cat-count">10</div>
+      <div class="cat-count">11</div>
       <div class="collapse-btn">&#9662;</div>
     </div>
     <div class="link-list">
@@ -551,6 +551,7 @@
       <div class="link-item"><a href="https://www.familytreenow.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Family Tree Now<span class="link-host">familytreenow.com</span></a></div>
       <div class="link-item"><a href="https://npd.pentester.com/" target="_blank" rel="noopener"><span class="link-dot"></span>NPD Breach Check<span class="link-host">npd.pentester.com</span></a></div>
       <div class="link-item"><a href="https://namechk.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Namechk (Username Search)<span class="link-host">namechk.com</span></a></div>
+      <div class="link-item"><a href="https://takeitdown.ftc.gov/" target="_blank" rel="noopener"><span class="link-dot"></span>Take It Down (NCMEC / FTC)<span class="link-host">takeitdown.ftc.gov</span></a></div>
       <div class="sub-label">Social Media</div>
       <div class="link-item"><a href="https://sowdust.github.io/fb-search/" target="_blank" rel="noopener"><span class="link-dot"></span>Facebook Search (SowDust)<span class="link-host">sowdust.github.io</span></a></div>
       <div class="link-item"><a href="https://followerwonk.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Followerwonk (X / Twitter Analytics)<span class="link-host">followerwonk.com</span></a></div>
@@ -700,13 +701,14 @@
     <div class="cat-header" onclick="togglePanel(this)">
       <div class="cat-icon">🎓</div>
       <div class="cat-label">Training &amp; Certs</div>
-      <div class="cat-count">21</div>
+      <div class="cat-count">22</div>
       <div class="collapse-btn">&#9662;</div>
     </div>
     <div class="link-list">
       <div class="sub-label">Forensics &amp; IR Training</div>
       <div class="link-item"><a href="https://training.13cubed.com/" target="_blank" rel="noopener"><span class="link-dot"></span>13Cubed Training<span class="link-host">training.13cubed.com</span></a></div>
       <div class="link-item"><a href="https://nullsec.us/" target="_blank" rel="noopener"><span class="link-dot"></span>ØSecurity (nullsec.us)<span class="link-host">nullsec.us</span></a></div>
+      <div class="link-item"><a href="https://niccs.cisa.gov/training/cisa-learning" target="_blank" rel="noopener"><span class="link-dot"></span>CISA Learning<span class="link-host">niccs.cisa.gov</span></a></div>
       <div class="link-item"><a href="https://dfirdominican.com/" target="_blank" rel="noopener"><span class="link-dot"></span>DFIR Dominican<span class="link-host">dfirdominican.com</span></a></div>
       <div class="link-item"><a href="https://ondemand.sans.org/" target="_blank" rel="noopener"><span class="link-dot"></span>SANS OnDemand<span class="link-host">ondemand.sans.org</span></a></div>
       <div class="link-item"><a href="https://www.sans.org/account" target="_blank" rel="noopener"><span class="link-dot"></span>SANS Institute Account<span class="link-host">sans.org</span></a></div>
@@ -766,11 +768,11 @@
 <footer>
   <span>OSINT &amp; CYBER INVESTIGATION RESOURCES</span>
   <span class="sep">|</span>
-  <span id="result-count">170 resources</span>
+  <span id="result-count">172 resources</span>
   <span class="sep">|</span>
   <span>12 categories</span>
   <span class="sep">|</span>
-  <span id="version">v2.1.1</span>
+  <span id="version">v2.1.2</span>
   <span class="sep">|</span>
   <span>Updated 2026-09-28</span>
 </footer>
@@ -845,7 +847,7 @@
     });
 
     document.getElementById('result-count').textContent =
-      query ? `${visible} match${visible !== 1 ? 'es' : ''}` : '170 resources';
+      query ? `${visible} match${visible !== 1 ? 'es' : ''}` : '172 resources';
   }
 
   searchInput.addEventListener('input', applyFilters);

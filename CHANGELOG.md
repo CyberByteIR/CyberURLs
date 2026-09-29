@@ -2,6 +2,15 @@
 
 All notable changes to CyberURLs are documented here.
 
+## v2.1.2 — 2026-09-28
+
+### Added
+
+- Take It Down (NCMEC / FTC) under OSINT & People → People & Identity — hash-based removal of minors' intimate images.
+- CISA Learning under Training & Certs → Forensics & IR Training — free federal cyber training, replacing the decommissioned FedVTE.
+
+Both verified reachable at time of addition. Total is now 172 resources.
+
 ## v2.1.1 — 2026-09-28
 
 ### Changed
