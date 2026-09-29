@@ -2,6 +2,19 @@
 
 All notable changes to CyberURLs are documented here.
 
+## v2.1.4 — 2026-09-28
+
+### Changed
+
+- CentralOps Network Tools and MXToolbox Network Tools moved from Network & Infra → IP Lookup & Geolocation to Network & Infra → Domain, URL & Site Analysis. That subgroup goes 6 to 8; IP Lookup & Geolocation goes 6 to 4. Network & Infra stays at 34.
+
+### Removed
+
+- RansomWatch (`ransomwatch.telemetry.ltd`).
+- Ransomware.live – Clop group page.
+
+Leak Site Trackers goes 4 to 2 and the Ransomware panel 8 to 6. Total is now 170 resources.
+
 ## v2.1.3 — 2026-09-28
 
 ### Fixed

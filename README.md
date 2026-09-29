@@ -4,7 +4,7 @@
 
 Single-file, offline-capable link dashboard for OSINT and cyber investigation resources.
 
-**172 resources across 12 categories and 45 subcategories.** Open [`index.html`](index.html) in any browser — no build step, no server, no dependencies to install.
+**170 resources across 12 categories and 45 subcategories.** Open [`index.html`](index.html) in any browser — no build step, no server, no dependencies to install.
 
 ## Features
 
@@ -23,7 +23,7 @@ Single-file, offline-capable link dashboard for OSINT and cyber investigation re
 |---|---|---|
 | Network & Infra | 34 | IP Lookup & Geolocation · IP Reputation, Proxy & Tor · Domain, URL & Site Analysis · Email Header Analysis · Attack Surface & Recon · Wireless & Hardware IDs · Peer-to-Peer & Tracking |
 | Malware & Threat Intel | 17 | Threat Intelligence Platforms · File & Sample Analysis · Sample & Hash Repositories · Breach & Credential Data |
-| Ransomware | 8 | Leak Site Trackers · Identification & Decryption · Group Intelligence |
+| Ransomware | 6 | Leak Site Trackers · Identification & Decryption · Group Intelligence |
 | Cryptocurrency | 10 | Investigation Platforms · Block Explorers · Attribution & Abuse Reporting · Reference |
 | OSINT & People | 11 | People & Identity · Social Media · Vehicles · Tool Collections |
 | LE Databases | 12 | Commercial Data Aggregators · Criminal Justice Systems · Federal & Fusion Portals |
@@ -38,7 +38,7 @@ Single-file, offline-capable link dashboard for OSINT and cyber investigation re
 
 Last verified **2026-09-28** (automated HTTP probe, redirects followed).
 
-- 166 of 172 URLs confirmed reachable. Several return `401`/`403`/`429` to a scripted request — that is bot protection or an authentication gate, not link rot; they load normally in a browser.
+- 164 of 170 URLs confirmed reachable. Several return `401`/`403`/`429` to a scripted request — that is bot protection or an authentication gate, not link rot; they load normally in a browser.
 - Redirected to a new home, URLs updated: InfraGard (`infragard.fbi.gov`), EchoTrail (`echotrail.io`), ZetX TraX (`trax.lexisnexisrisk.com`), XDA (`xdaforums.com`), Objective-See Mac malware collection (GitHub).
 - Retired course versions replaced with current ones: Professor Messer Security+ `SY0-701` and Network+ `N10-009`.
 - `vindecoder.net` no longer answers on port 80 or 443; replaced with Vincario (`vincario.com`).
