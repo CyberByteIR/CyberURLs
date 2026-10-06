@@ -2,6 +2,14 @@
 
 All notable changes to CyberURLs are documented here.
 
+## v2.1.9 — 2026-10-06
+
+### Removed
+
+- INcite / ECWS (`mycourts.in.gov`) from Indiana → Courts & Case Records.
+
+Indiana goes 13 to 12, and the total back to 171 resources.
+
 ## v2.1.8 — 2026-10-06
 
 ### Added

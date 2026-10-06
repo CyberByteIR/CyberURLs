@@ -4,7 +4,7 @@
 
 Single-file, offline-capable link dashboard for OSINT and cyber investigation resources.
 
-**172 resources across 12 categories and 45 subcategories.** Open [`index.html`](index.html) in any browser — no build step, no server, no dependencies to install.
+**171 resources across 12 categories and 45 subcategories.** Open [`index.html`](index.html) in any browser — no build step, no server, no dependencies to install.
 
 ## Features
 
@@ -34,7 +34,7 @@ Single-file, offline-capable link dashboard for OSINT and cyber investigation re
 | Forensic Tools | 22 | Vendor Portals & Downloads · Open-Source Forensic Tools · Encoding, Regex & Data Utilities · Passwords & Hash Cracking |
 | Reference & Misc | 2 | General |
 | Training & Certs | 21 | Forensics & IR Training · Law Enforcement Academies · CompTIA & Vendor Certification · Networking Fundamentals |
-| Indiana | 13 | Courts & Case Records · Corrections & Warrants · Vehicles & Geography · State Agency Forms & Programs |
+| Indiana | 12 | Courts & Case Records · Corrections & Warrants · Vehicles & Geography · State Agency Forms & Programs |
 
 ## Link status
 
