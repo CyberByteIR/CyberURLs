@@ -2,6 +2,14 @@
 
 All notable changes to CyberURLs are documented here.
 
+## v2.1.8 — 2026-10-06
+
+### Added
+
+- TRM Labs (`my.trmlabs.com`) under Cryptocurrency → Investigation Platforms, alongside the Chainalysis entries. Credentialed vendor portal, so it was not included in the automated reachability probe.
+
+Cryptocurrency goes 10 to 11, and the total to 172 resources.
+
 ## v2.1.7 — 2026-09-28
 
 ### Added
