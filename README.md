@@ -4,7 +4,7 @@
 
 Single-file, offline-capable link dashboard for OSINT and cyber investigation resources.
 
-**172 resources across 12 categories and 45 subcategories.** Open [`index.html`](index.html) in any browser — no build step, no server, no dependencies to install.
+**173 resources across 12 categories and 46 subcategories.** Open [`index.html`](index.html) in any browser — no build step, no server, no dependencies to install.
 
 ## Features
 
@@ -26,7 +26,7 @@ Single-file, offline-capable link dashboard for OSINT and cyber investigation re
 | Network & Infra | 34 | IP Lookup & Geolocation · IP Reputation, Proxy & Tor · Domain, URL & Site Analysis · Email Header Analysis · Attack Surface & Recon · Wireless & Hardware IDs · Peer-to-Peer & Tracking |
 | Malware & Threat Intel | 17 | Threat Intelligence Platforms · File & Sample Analysis · Sample & Hash Repositories · Breach & Credential Data |
 | Ransomware | 6 | Leak Site Trackers · Identification & Decryption · Group Intelligence |
-| Cryptocurrency | 11 | Investigation Platforms · Block Explorers · Attribution & Abuse Reporting · Reference |
+| Cryptocurrency | 12 | Investigation Platforms · Block Explorers · Wallet & Key Tools · Attribution & Abuse Reporting · Reference |
 | OSINT & People | 12 | People & Identity · Social Media · Vehicles · Tool Collections |
 | LE Databases | 13 | Commercial Data Aggregators · Criminal Justice Systems · Federal & Fusion Portals |
 | Legal Process | 8 | Provider Legal Process Portals · Templates & Reference |

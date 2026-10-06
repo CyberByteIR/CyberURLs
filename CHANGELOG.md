@@ -2,6 +2,15 @@
 
 All notable changes to CyberURLs are documented here.
 
+## v2.1.11 — 2026-10-06
+
+### Added
+
+- BIP39 Mnemonic Converter (`iancoleman.io/bip39`) under Cryptocurrency, in a new **Wallet & Key Tools** subcategory. Confirmed reachable (`200`) before adding.
+- New subcategory `Wallet & Key Tools` in the Cryptocurrency panel, placed after Block Explorers; the tool fit none of the existing groups.
+
+Cryptocurrency goes 11 to 12, subcategories 45 to 46, and the total to 173 resources.
+
 ## v2.1.10 — 2026-10-06
 
 ### Added

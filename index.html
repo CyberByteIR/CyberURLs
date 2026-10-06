@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="version" content="2.1.10">
+<meta name="version" content="2.1.11">
 <title>OSINT & Cyber Investigation Resources</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Barlow:wght@300;400;500;600;700&display=swap');
@@ -614,7 +614,7 @@
     <div class="cat-header" onclick="togglePanel(this)">
       <div class="cat-icon">₿</div>
       <div class="cat-label">Cryptocurrency</div>
-      <div class="cat-count">11</div>
+      <div class="cat-count">12</div>
       <div class="collapse-btn">&#9662;</div>
     </div>
     <div class="link-list">
@@ -628,6 +628,8 @@
       <div class="link-item fav"><a href="https://mempool.space/" target="_blank" rel="noopener"><span class="link-star" title="Author&#39;s favorite">&#9733;</span>Mempool (BTC Explorer)<span class="link-host">mempool.space</span></a></div>
       <div class="link-item"><a href="https://etherscan.io/" target="_blank" rel="noopener"><span class="link-dot"></span>Etherscan (ETH Explorer)<span class="link-host">etherscan.io</span></a></div>
       <div class="link-item"><a href="https://mainnet.observer/" target="_blank" rel="noopener"><span class="link-dot"></span>mainnet.observer<span class="link-host">mainnet.observer</span></a></div>
+      <div class="sub-label">Wallet &amp; Key Tools</div>
+      <div class="link-item"><a href="https://iancoleman.io/bip39/" target="_blank" rel="noopener"><span class="link-dot"></span>BIP39 Mnemonic Converter<span class="link-host">iancoleman.io</span></a></div>
       <div class="sub-label">Attribution &amp; Abuse Reporting</div>
       <div class="link-item"><a href="https://chainabuse.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Chain Abuse<span class="link-host">chainabuse.com</span></a></div>
       <div class="link-item"><a href="https://www.bitcoinwhoswho.com/" target="_blank" rel="noopener"><span class="link-dot"></span>Bitcoin Who&#x27;s Who<span class="link-host">bitcoinwhoswho.com</span></a></div>
@@ -870,11 +872,11 @@
   <span class="sep">|</span>
   <span class="legend"><span class="legend-star">&#9733;</span> author&#39;s favorite</span>
   <span class="sep">|</span>
-  <span id="result-count">172 resources</span>
+  <span id="result-count">173 resources</span>
   <span class="sep">|</span>
   <span>12 categories</span>
   <span class="sep">|</span>
-  <span id="version">v2.1.10</span>
+  <span id="version">v2.1.11</span>
   <span class="sep">|</span>
   <a class="footer-link" href="https://github.com/CyberByteIR/CyberURLs" target="_blank" rel="noopener">source &#8599;</a>
   <span class="sep">|</span>
@@ -951,7 +953,7 @@
     });
 
     document.getElementById('result-count').textContent =
-      query ? `${visible} match${visible !== 1 ? 'es' : ''}` : '172 resources';
+      query ? `${visible} match${visible !== 1 ? 'es' : ''}` : '173 resources';
   }
 
   searchInput.addEventListener('input', applyFilters);
