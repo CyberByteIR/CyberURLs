@@ -4,7 +4,7 @@
 
 Single-file, offline-capable link dashboard for OSINT and cyber investigation resources.
 
-**171 resources across 12 categories and 45 subcategories.** Open [`index.html`](index.html) in any browser — no build step, no server, no dependencies to install.
+**172 resources across 12 categories and 45 subcategories.** Open [`index.html`](index.html) in any browser — no build step, no server, no dependencies to install.
 
 ## Features
 
@@ -27,7 +27,7 @@ Single-file, offline-capable link dashboard for OSINT and cyber investigation re
 | Malware & Threat Intel | 17 | Threat Intelligence Platforms · File & Sample Analysis · Sample & Hash Repositories · Breach & Credential Data |
 | Ransomware | 6 | Leak Site Trackers · Identification & Decryption · Group Intelligence |
 | Cryptocurrency | 11 | Investigation Platforms · Block Explorers · Attribution & Abuse Reporting · Reference |
-| OSINT & People | 11 | People & Identity · Social Media · Vehicles · Tool Collections |
+| OSINT & People | 12 | People & Identity · Social Media · Vehicles · Tool Collections |
 | LE Databases | 13 | Commercial Data Aggregators · Criminal Justice Systems · Federal & Fusion Portals |
 | Legal Process | 8 | Provider Legal Process Portals · Templates & Reference |
 | Mobile & Device | 14 | Tool Support & Compatibility · Device Identification · Phone Numbers & Carriers · CDR & Tower Analysis · Community & Technique |
@@ -43,7 +43,7 @@ Last verified **2026-09-28** (automated HTTP probe, redirects followed).
 - 165 of 171 URLs confirmed reachable. Several return `401`/`403`/`429` to a scripted request — that is bot protection or an authentication gate, not link rot; they load normally in a browser.
 - Redirected to a new home, URLs updated: InfraGard (`infragard.fbi.gov`), EchoTrail (`echotrail.io`), ZetX TraX (`trax.lexisnexisrisk.com`), XDA (`xdaforums.com`), Objective-See Mac malware collection (GitHub).
 - Retired course versions replaced with current ones: Professor Messer Security+ `SY0-701` and Network+ `N10-009`.
-- `vindecoder.net` no longer answers on port 80 or 443; replaced with Vincario (`vincario.com`).
+- `vindecoder.net` was unreachable on 2026-09-28 and replaced with Vincario (`vincario.com`). It answers again as of 2026-10-06 (`200`, redirects to `www.vindecoder.net`) and is listed alongside Vincario.
 - **Field Search (NLECTC)** — `justnet.org` serves an expired TLS certificate. The site is up, but browsers will show a certificate warning. Left in place, flagged here.
 - **IP Quality Score** and **IPLogger** resolve to `0.0.0.0` on filtered DNS resolvers (both appear on common threat blocklists). They are reachable from unfiltered networks.
 - **Meta / Facebook LE Portal** cannot be verified by script (Facebook returns `400` to unauthenticated non-browser requests).

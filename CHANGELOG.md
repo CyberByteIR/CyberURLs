@@ -2,6 +2,18 @@
 
 All notable changes to CyberURLs are documented here.
 
+## v2.1.10 — 2026-10-06
+
+### Added
+
+- VIN Decoder (`www.vindecoder.net`) under OSINT & People → Vehicles, alongside Vincario. Dropped at v2.0.1 as unreachable; it answers again (`200`, redirects to `www`), confirmed before adding.
+
+OSINT & People goes 11 to 12, and the total to 172 resources.
+
+### Changed
+
+- README link-status note on `vindecoder.net` updated to record that the host is reachable again.
+
 ## v2.1.9 — 2026-10-06
 
 ### Removed
