@@ -2,6 +2,14 @@
 
 All notable changes to CyberURLs are documented here.
 
+## v2.1.12 — 2026-10-07
+
+### Added
+
+- TRM Blockchain Legal Library (`trmlabs.com/blockchain-legal-library`) under Cryptocurrency → Reference, beside the Chainalysis entity categories. Public page, confirmed reachable (`200`) before adding.
+
+Cryptocurrency goes 12 to 13, and the total to 174 resources.
+
 ## v2.1.11 — 2026-10-06
 
 ### Added
