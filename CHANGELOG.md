@@ -2,6 +2,14 @@
 
 All notable changes to CyberURLs are documented here.
 
+## v2.1.14 — 2026-10-14
+
+### Added
+
+- NW3C Course Catalog (`nw3c.org/UI/CourseCatalog.html`) under Training & Certs → Law Enforcement Academies, after PLE Training. Confirmed reachable (`200`) before adding.
+
+Training & Certs goes 21 to 22, and the total to 176 resources.
+
 ## v2.1.13 — 2026-10-14
 
 ### Added
