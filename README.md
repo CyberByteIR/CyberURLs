@@ -4,7 +4,7 @@
 
 Single-file, offline-capable link dashboard for OSINT and cyber investigation resources.
 
-**174 resources across 12 categories and 46 subcategories.** Open [`index.html`](index.html) in any browser — no build step, no server, no dependencies to install.
+**175 resources across 12 categories and 46 subcategories.** Open [`index.html`](index.html) in any browser — no build step, no server, no dependencies to install.
 
 ## Features
 
@@ -29,7 +29,7 @@ Single-file, offline-capable link dashboard for OSINT and cyber investigation re
 | Cryptocurrency | 13 | Investigation Platforms · Block Explorers · Wallet & Key Tools · Attribution & Abuse Reporting · Reference |
 | OSINT & People | 12 | People & Identity · Social Media · Vehicles · Tool Collections |
 | LE Databases | 13 | Commercial Data Aggregators · Criminal Justice Systems · Federal & Fusion Portals |
-| Legal Process | 8 | Provider Legal Process Portals · Templates & Reference |
+| Legal Process | 9 | Provider Legal Process Portals · Templates & Reference |
 | Mobile & Device | 14 | Tool Support & Compatibility · Device Identification · Phone Numbers & Carriers · CDR & Tower Analysis · Community & Technique |
 | Forensic Tools | 22 | Vendor Portals & Downloads · Open-Source Forensic Tools · Encoding, Regex & Data Utilities · Passwords & Hash Cracking |
 | Reference & Misc | 2 | General |

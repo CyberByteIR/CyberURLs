@@ -2,6 +2,14 @@
 
 All notable changes to CyberURLs are documented here.
 
+## v2.1.13 — 2026-10-14
+
+### Added
+
+- NW3C ALPHA Warrant Generator (`nw3c.org/UI/AlphaWarrant.html`) under Legal Process → Templates & Reference, beside the KCPAO templates. Generates 2703(d) orders, PRTT applications, search warrants, NDOs, and certificates of authenticity. Confirmed reachable (`200`) before adding.
+
+Legal Process goes 8 to 9, and the total to 175 resources.
+
 ## v2.1.12 — 2026-10-07
 
 ### Added
