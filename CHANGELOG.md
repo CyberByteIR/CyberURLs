@@ -2,6 +2,12 @@
 
 All notable changes to CyberURLs are documented here.
 
+## v2.1.15 — 2026-10-15
+
+### Added
+
+- Favicon: `favicon.svg` (primary), `favicon.ico` (16/32/48 fallback), and `apple-touch-icon.png` (180, full-bleed for iOS masking), linked from `index.html`. Blue bookmark ribbon with a crosshair on the dashboard's dark panel, drawn from the page palette (`--bg`, `--accent`, `--text`).
+
 ## v2.1.14 — 2026-10-14
 
 ### Added
